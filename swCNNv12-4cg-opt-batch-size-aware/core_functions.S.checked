@@ -1,0 +1,2134 @@
+	.set noreorder
+	.set noat
+	.arch sw3
+	#  /usr/sw-mpp/swcc/lib/gcc-lib/shenwei-swcc-linux/5.421-sw-449/be::5.421-sw-449
+
+	#-----------------------------------------------------------
+	# Compiling core_functions.c (/tmp/ccI#.ZSh3HJ)
+	#-----------------------------------------------------------
+
+	#-----------------------------------------------------------
+	# Options:
+	#-----------------------------------------------------------
+	#  Target:SW3, ISA:ISA_1, Endian:little, Pointer Size:64
+	#  -O3	(Optimization level)
+	#  -g0	(Debug level)
+	#  -m2	(Report advisories)
+	#-----------------------------------------------------------
+
+	.file	1	"/home/export/online1/qhtest/swqh/USER-TSINGHUA/zhaowl/HKconv5.7.2/core_functions.c"
+	.file	2	"/usr/sw-mpp/swcc/sw5gcc-binary/bin/../lib/gcc/alphaev6-unknown-linux-gnu/4.1.2/../../../../alphaev6-unknown-linux-gnu/sys-include/sys/sysmacros.h"
+	.file	3	"/usr/sw-mpp/swcc/lib/gcc-lib/alpha-swcc-linux/5.421-sw-449/include/simd.h"
+	.file	4	"/usr/sw-mpp/swcc/lib/gcc-lib/alpha-swcc-linux/5.421-sw-449/include/dma.h"
+
+
+	.section .tdata, "waT", "progbits"
+	.align	0
+
+	.section .tdata_local_fix, "waT", "progbits"
+	.align	5
+
+	.section .text1, "ax", "progbits"
+	.align	4
+
+	.section .bss, "wa", "nobits"
+	.align	5
+
+	.section .rodata, "a", "progbits"
+	.align	5
+
+	.section .bss
+	.org 0x0
+	.align	0
+	.type	anon51_122, @object
+	.size	anon51_122, 32
+anon51_122:	# 0x0
+	.skip 32
+	.org 0x20
+	.align	0
+	.type	anon52_123, @object
+	.size	anon52_123, 32
+anon52_123:	# 0x20
+	.skip 32
+	.org 0x40
+	.align	0
+	.type	anon53_124, @object
+	.size	anon53_124, 32
+anon53_124:	# 0x40
+	.skip 32
+	.org 0x60
+	.align	0
+	.type	anon54_125, @object
+	.size	anon54_125, 32
+anon54_125:	# 0x60
+	.skip 32
+	.org 0x80
+	.align	0
+	.type	anon55_126, @object
+	.size	anon55_126, 32
+anon55_126:	# 0x80
+	.skip 32
+	.org 0xa0
+	.align	0
+	.type	anon56_127, @object
+	.size	anon56_127, 32
+anon56_127:	# 0xa0
+	.skip 32
+	.org 0xc0
+	.align	0
+	.type	anon57_128, @object
+	.size	anon57_128, 32
+anon57_128:	# 0xc0
+	.skip 32
+	.org 0xe0
+	.align	0
+	.type	anon58_129, @object
+	.size	anon58_129, 32
+anon58_129:	# 0xe0
+	.skip 32
+	.org 0x100
+	.align	0
+	.type	anon65_131, @object
+	.size	anon65_131, 32
+anon65_131:	# 0x100
+	.skip 32
+	.org 0x120
+	.align	0
+	.type	anon66_132, @object
+	.size	anon66_132, 32
+anon66_132:	# 0x120
+	.skip 32
+	.org 0x140
+	.align	0
+	.type	anon67_133, @object
+	.size	anon67_133, 32
+anon67_133:	# 0x140
+	.skip 32
+	.org 0x160
+	.align	0
+	.type	anon68_134, @object
+	.size	anon68_134, 32
+anon68_134:	# 0x160
+	.skip 32
+	.org 0x180
+	.align	0
+	.type	anon69_135, @object
+	.size	anon69_135, 32
+anon69_135:	# 0x180
+	.skip 32
+	.org 0x1a0
+	.align	0
+	.type	anon70_136, @object
+	.size	anon70_136, 32
+anon70_136:	# 0x1a0
+	.skip 32
+	.org 0x1c0
+	.align	0
+	.type	anon71_137, @object
+	.size	anon71_137, 32
+anon71_137:	# 0x1c0
+	.skip 32
+	.org 0x1e0
+	.align	0
+	.type	anon72_138, @object
+	.size	anon72_138, 32
+anon72_138:	# 0x1e0
+	.skip 32
+	.section .text1
+
+	# Program Unit: convforward_p_simd_rc
+	.align 4
+	.ent	convforward_p_simd_rc#
+	.globl	convforward_p_simd_rc
+convforward_p_simd_rc:	# 0x0
+	# anon15 = 520
+	# anon16 = 516
+	# anon17 = 676
+	# anon18 = 688
+	# anon19 = 524
+	# anon21 = 528
+	# anon22 = 672
+	# anon23 = 512
+	# anon24 = 508
+	# anon25 = 504
+	# anon26 = 180
+	# anon27 = 184
+	# anon28 = 176
+	# anon29 = 1152
+	# anon31 = 500
+	# anon32 = 496
+	# anon33 = 492
+	# anon34 = 488
+	# anon35 = 484
+	# anon36 = 480
+	# anon37 = 476
+	# anon38 = 472
+	# anon39 = 464
+	# anon40 = 456
+	# anon41 = 448
+	# anon42 = 64
+	# anon43 = 68
+	# anon44 = 96
+	# anon45 = 128
+	# anon46 = 208
+	# anon47 = 200
+	# anon48 = 544
+	# anon49 = 992
+	# anon59 = 680
+	# anon60 = 684
+	# anon61 = 692
+	# anon62 = 696
+	# anon63 = 736
+	# _temp___vec_cst0 = 704
+	# _temp___vec_cst1 = 864
+	# _temp___vec_cst2 = 896
+	# _temp___vec_cst3 = 928
+	# anon64 = 960
+	# anon73 = 1120
+	# _temp___save_expr4 = 1160
+	# _temp___save_expr5 = 1156
+	# anon74 = 1180
+	# anon75 = 1184
+	# reply = 1192
+	# count = 1188
+	# reply = 1168
+	# count = 1176
+	# reply = 192
+	# count = 188
+	# a = 216
+	# bleng = 212
+	# a = 232
+	# bsize = 224
+	# a = 248
+	# size = 240
+	# reply = 168
+	# count = 160
+	# a = 264
+	# bleng = 256
+	# a = 280
+	# bsize = 272
+	# a = 296
+	# size = 288
+	# a = 312
+	# bleng = 304
+	# a = 328
+	# bsize = 320
+	# a = 344
+	# size = 336
+	# a = 360
+	# reply = 352
+	# a = 376
+	# mode = 368
+	# a = 392
+	# op = 384
+	# a = 408
+	# reply = 400
+	# a = 424
+	# mode = 416
+	# a = 440
+	# op = 432
+	# return_address = 32
+	# _temp_gra_spill0 = 1200
+	# _temp_gra_spill1 = 1208
+	# _temp_gra_spill2 = 1216
+	# _temp_gra_spill3 = 1224
+	# _temp_gra_spill4 = 1232
+	# _temp_gra_spill5 = 1240
+	# _temp_gra_spill6 = 1248
+	# _temp_gra_spill7 = 1256
+	# _temp_gra_spill8 = 1264
+	# _temp_gra_spill9 = 1272
+	# _temp_gra_spill10 = 1280
+	# _temp_gra_spill11 = 1288
+	# _temp_gra_spill12 = 1296
+	# _temp_gra_spill13 = 1304
+	.loc	1	28	0
+#  24  //B, No, Co, Ro
+#  25  //__thread_local SIMDType local_output[K*No*Co*B/256];
+#  26  
+#  27  void convforward_p_simd_rc(ConvData* param)
+#  28  {
+.BB1_convforward_p_simd_rc:
+	.prologue
+	ldih	$gp,0($27)               	!gpdisp!1	# [0] 0
+	ldi	$gp,0($gp)                	!gpdisp!1	# [1] 0
+	
+$ng..convforward_p_simd_rc:
+	ldi	$sp,-1344($sp)            	# [3] 
+.LCFI_convforward_p_simd_rc_adjustsp:
+	stl	$26,32($sp)               	# [4] return_address
+.LCFI_convforward_p_simd_rc_store26:
+	stl	$15,1216($sp)             	# [4] _temp_gra_spill2
+	.frame $15,1344,$26,0
+	.mask 0x4008000,-1344
+	stl	$14,1224($sp)             	# [5] _temp_gra_spill3
+	stl	$13,1232($sp)             	# [5] _temp_gra_spill4
+#	.spillsp $15, 0
+	stl	$12,1240($sp)             	# [6] _temp_gra_spill5
+#	.spillsp $14, 0
+	stl	$11,1248($sp)             	# [6] _temp_gra_spill6
+#	.spillsp $13, 0
+	stl	$10,1200($sp)             	# [7] _temp_gra_spill0
+#	.spillsp $12, 0
+	stl	$9,1208($sp)              	# [7] _temp_gra_spill1
+#	.spillsp $11, 0
+	stl	$16,1328($sp)             	# [8] param
+	.loc	1	30	0
+#  29    int cB, cNi, cRi, cCi, cKr, cKc, ccCore, crCore, cImg, cNo;
+#  30    int id = athread_get_id(-1);
+#	.spillsp $10, 0
+	ldi	$16,-1($31)               	# [8] 
+#	.spillsp $9, 0
+	.globl	athread_get_id
+	bsr	$26,athread_get_id        	# [8] athread_get_id
+.BB2_convforward_p_simd_rc:
+	.loc	1	35	0
+#  31    int cid = id%8, rid = id/8;
+#  32    int input_calc_index=1, input_load_index=0;
+#  33    int i, j , k;
+#  34    int Ni, Ri, Ci, No, K, Ro, Co, B;
+#  35    Ni = param->_Ni;
+	ldl	$27,1328($sp)             	# [0] param
+	.loc	1	31	0
+	addw	$0,7,$3                  	# [0] 
+	subw	$31,$0,$1                	# [0] 
+	.loc	1	30	0
+	ldih	$gp,0($26)               	!gpdisp!2	# [0] 0
+	.loc	1	31	0
+	selge	$0,$0,$3,$3             	# [1] 
+	selge	$0,$0,$1,$1             	# [1] 
+	.loc	1	30	0
+	ldi	$gp,0+12($gp)             	!gpdisp!2	# [1] 0
+	.loc	1	31	0
+	sra	$3,3,$3                   	# [2] 
+	and	$1,7,$1                   	# [2] 
+	.loc	1	35	0
+	ldw	$16,24($27)               	# [3] id:483
+	.loc	1	31	0
+	stl	$3,1304($sp)              	# [3] _temp_gra_spill13
+	.loc	1	46	0
+#  42    B = param->_B;
+#  43  
+#  44  //B, Ni, Ci, Ri
+#  45    //__thread_local SIMDType local_input[Ni*B/256]; //for testing, we make each core process 4 pixels at each time. B == 32
+#  46    SIMDType* local_input = (SIMDType*) ldm_malloc(sizeof(SIMDType)*Ni*B/256*2);
+	stl	$16,1264($sp)             	# [6] _temp_gra_spill8
+	.loc	1	35	0
+	stw	$16,500($sp)              	# [7] anon31
+	.loc	1	36	0
+	ldw	$4,28($27)                	# [7] id:484
+	stw	$4,496($sp)               	# [11] anon32
+	.loc	1	30	0
+	stw	$0,512($sp)               	# [12] anon23
+	.loc	1	37	0
+	ldw	$2,32($27)                	# [12] id:485
+	stw	$2,492($sp)               	# [16] anon33
+	.loc	1	38	0
+	ldw	$2,36($27)                	# [16] id:486
+	stw	$2,488($sp)               	# [20] anon34
+	.loc	1	31	0
+	subw	$31,$1,$2                	# [20] 
+	stw	$3,504($sp)               	# [21] anon25
+	.loc	1	39	0
+	ldw	$3,40($27)                	# [21] id:487
+	.loc	1	31	0
+	selge	$0,$1,$2,$0             	# [21] 
+	.loc	1	39	0
+	stw	$3,484($sp)               	# [25] anon35
+	.loc	1	40	0
+	ldw	$1,44($27)                	# [25] id:488
+	stw	$1,480($sp)               	# [29] anon36
+	.loc	1	31	0
+	mov	$0,$1                     	# [29] 
+	stw	$0,508($sp)               	# [30] anon24
+	.loc	1	41	0
+	ldw	$28,48($27)               	# [30] id:489
+	.loc	1	31	0
+	stl	$1,1296($sp)              	# [31] _temp_gra_spill12
+	.loc	1	41	0
+	stw	$28,476($sp)              	# [34] anon37
+	.loc	1	42	0
+	ldw	$27,52($27)               	# [34] id:490
+	.loc	1	46	0
+	mull	$16,$27,$16              	# [37] 
+	stl	$27,1272($sp)             	# [37] _temp_gra_spill9
+	.loc	1	42	0
+	stw	$27,472($sp)              	# [38] anon38
+	.loc	1	46	0
+	s8addl	$16,$31,$16            	# [44] 
+	s4addl	$16,$31,$16            	# [45] 
+	srl	$16,8,$16                 	# [46] 
+	addl	$16,$16,$16              	# [47] 
+	.globl	ldm_malloc
+	bsr	$26,ldm_malloc            	# [47] ldm_malloc
+.BB3_convforward_p_simd_rc:
+	.loc	1	47	0
+#  47    Type* local_weight = (Type*) ldm_malloc(sizeof(Type)*K*K*Ni*No/64);
+	ldw	$28,484($sp)              	# [0] anon35
+	ldl	$27,1264($sp)             	# [0] _temp_gra_spill8
+	.loc	1	46	0
+	ldih	$gp,0($26)               	!gpdisp!3	# [0] 0
+	.loc	1	47	0
+	ldw	$16,488($sp)              	# [1] anon34
+	.loc	1	46	0
+	stl	$0,1256($sp)              	# [1] _temp_gra_spill7
+	ldi	$gp,0+8($gp)              	!gpdisp!3	# [1] 0
+	.loc	1	47	0
+	stl	$28,1288($sp)             	# [3] _temp_gra_spill11
+	mull	$28,$28,$28              	# [3] 
+	stl	$16,1280($sp)             	# [4] _temp_gra_spill10
+	.loc	1	46	0
+	stl	$0,464($sp)               	# [5] anon39
+	.loc	1	47	0
+	mull	$27,$28,$27              	# [10] 
+	mull	$16,$27,$16              	# [17] 
+	s8addl	$16,$31,$16            	# [24] 
+	srl	$16,6,$16                 	# [25] 
+	bsr	$26,ldm_malloc            	# [25] ldm_malloc
+.BB4_convforward_p_simd_rc:
+	.loc	1	48	0
+#  48    SIMDType* local_output = (SIMDType*) ldm_malloc(sizeof(SIMDType)*K*No*Co*B/256);
+	ldl	$28,1280($sp)             	# [0] _temp_gra_spill10
+	ldl	$1,1288($sp)              	# [0] _temp_gra_spill11
+	.loc	1	47	0
+	ldih	$gp,0($26)               	!gpdisp!4	# [0] 0
+	stl	$0,456($sp)               	# [1] anon40
+	.loc	1	48	0
+	ldw	$27,476($sp)              	# [1] anon37
+	.loc	1	47	0
+	ldi	$gp,0+8($gp)              	!gpdisp!4	# [1] 0
+	.loc	1	48	0
+	ldl	$16,1272($sp)             	# [2] _temp_gra_spill9
+	mull	$28,$1,$28               	# [3] 
+	mull	$27,$28,$27              	# [10] 
+	mull	$16,$27,$16              	# [17] 
+	s8addl	$16,$31,$16            	# [24] 
+	s4addl	$16,$31,$16            	# [25] 
+	srl	$16,8,$16                 	# [26] 
+	bsr	$26,ldm_malloc            	# [26] ldm_malloc
+.BB5_convforward_p_simd_rc:
+	.loc	1	73	0
+#  69  
+#  70  static __inline void 
+#  71  dma_set_reply(dma_desc *a, unsigned int volatile *reply)
+#  72  {
+#  73  	((dma_desc_u *)a)->packed.reply_addr = (unsigned short)(long)reply;
+	ldw	$5,488($sp)               	# [0] anon34
+	ldw	$24,472($sp)              	# [0] anon38
+	.loc	1	85	0
+#  81  
+#  82  static __inline void 
+#  83  dma_set_mode(dma_desc *a, unsigned int mode)
+#  84  {
+#  85  	((dma_desc_u *)a)->packed.dma_mode = mode;
+	ornot	$31,$31,$3              	# [0] 
+	.loc	1	57	0
+#  53  
+#  54  
+#  55  //  Type local_weight[K*K*Ni/64*No];
+#  56  //initilize DMA variables
+#  57    volatile int  replyget = 0, replyput = 0;
+	mov	1,$12                     	# [0] 
+	.loc	1	103	0
+#  99  
+# 100  static __inline void 
+# 101  dma_set_stepsize(dma_desc *a, unsigned int bleng)
+# 102  {
+# 103  	((dma_desc_u *)a)->packed.stride_length = bleng;
+	ldw	$17,500($sp)              	# [1] anon31
+	.loc	1	79	0
+	ldbu	$8,135($sp)              	# [1] anon45+7
+	.loc	1	85	0
+	srl	$3,60,$3                  	# [1] 
+	.loc	1	48	0
+	ldi	$2,68($sp)                	# [1] anon43
+	.loc	1	79	0
+	ldbu	$19,103($sp)             	# [2] anon44+7
+	.loc	1	85	0
+	sll	$3,4,$3                   	# [2] 
+	.loc	1	48	0
+	ldi	$13,64($sp)               	# [2] anon42
+	mov	$0,$20                    	# [2] 
+	.loc	1	73	0
+	mulw	$24,$5,$18               	# [3] 
+	.loc	1	85	0
+	and	$31,$3,$4                 	# [3] 
+	.loc	1	67	0
+	addw	$5,7,$7                  	# [3] 
+	.loc	1	57	0
+	ldi	$0,96($sp)                	# [3] anon44
+	.loc	1	79	0
+	srl	$8,4,$8                   	# [4] 
+	.loc	1	103	0
+	addw	$17,7,$1                 	# [4] 
+	.loc	1	67	0
+	addw	$24,7,$16                	# [4] 
+	ldi	$28,128($sp)              	# [4] anon45
+	.loc	1	57	0
+	stw	$31,64($sp)               	# [5] anon42
+	.loc	1	103	0
+	selge	$17,$17,$1,$17          	# [5] 
+	.loc	1	79	0
+	sll	$8,4,$8                   	# [5] 
+	.loc	1	97	0
+	ldi	$27,128($sp)              	# [5] anon45
+	.loc	1	57	0
+	stw	$31,68($sp)               	# [6] anon43
+	.loc	1	79	0
+	srl	$19,4,$19                 	# [6] 
+	sll	$12,60,$1                 	# [6] 
+	.loc	1	85	0
+	andnot	$8,$3,$8               	# [6] 
+	.loc	1	79	0
+	stw	$31,416($sp)              	# [7] mode
+	.loc	1	103	0
+	sra	$17,3,$17                 	# [7] 
+	.loc	1	79	0
+	sll	$19,4,$19                 	# [7] 
+	.loc	1	85	0
+	or	$4,$8,$8                   	# [7] 
+	.loc	1	73	0
+	stw	$31,384($sp)              	# [8] op
+	.loc	1	103	0
+	mulw	$17,$5,$6                	# [8] 
+	.loc	1	67	0
+	selge	$5,$5,$7,$5             	# [8] 
+	.loc	1	48	0
+	ldih	$gp,0($26)               	!gpdisp!5	# [8] 0
+	.loc	1	79	0
+	srl	$1,60,$1                  	# [9] 
+	.loc	1	85	0
+	stb	$8,135($sp)               	# [9] anon45+7
+	.loc	1	67	0
+	sra	$5,3,$5                   	# [9] 
+	.loc	1	103	0
+	ldi	$26,96($sp)               	# [9] anon44
+	.loc	1	73	0
+	addw	$18,63,$7                	# [10] 
+	.loc	1	79	0
+	or	$1,$19,$1                  	# [10] 
+	.loc	1	67	0
+	selge	$24,$24,$16,$24         	# [10] 
+	.loc	1	85	0
+	ldi	$16,64($sp)               	# [10] anon42
+	.loc	1	73	0
+	selge	$18,$18,$7,$18          	# [11] 
+	sth	$2,136($sp)               	# [11] anon45+8
+	.loc	1	85	0
+	andnot	$1,$3,$1               	# [11] 
+	.loc	1	67	0
+	mov	$5,$7                     	# [11] 
+	ldw	$3,128($sp)               	# [12] anon45
+	.loc	1	73	0
+	sra	$18,6,$18                 	# [12] 
+	.loc	1	85	0
+	or	$4,$1,$4                   	# [12] 
+	.loc	1	97	0
+	s4subl	$7,$7,$19              	# [12] 
+	.loc	1	73	0
+	s8addl	$18,$31,$18            	# [13] 
+	.loc	1	85	0
+	stb	$4,103($sp)               	# [13] anon44+7
+	.loc	1	67	0
+	s8addl	$7,$31,$8              	# [13] 
+	sra	$24,3,$24                 	# [13] 
+	sextw	$18,$1                  	# [14] 
+	.loc	1	73	0
+	sth	$13,104($sp)              	# [14] anon44+8
+	.loc	1	67	0
+	mov	$24,$21                   	# [14] 
+	ldi	$22,96($sp)               	# [14] anon44
+	srl	$3,24,$3                  	# [15] 
+	sll	$1,40,$1                  	# [15] 
+	.loc	1	103	0
+	addw	$6,7,$2                  	# [15] 
+	.loc	1	67	0
+	s8addl	$21,$31,$23            	# [15] 
+	.loc	1	79	0
+	stw	$31,368($sp)              	# [16] mode
+	.loc	1	67	0
+	sll	$3,24,$3                  	# [16] 
+	srl	$1,40,$1                  	# [16] 
+	.loc	1	97	0
+	sextw	$23,$25                 	# [16] 
+	.loc	1	57	0
+	stl	$0,440($sp)               	# [17] a
+	.loc	1	67	0
+	or	$1,$3,$0                   	# [17] 
+	.loc	1	103	0
+	selge	$6,$6,$2,$6             	# [17] 
+	.loc	1	97	0
+	sextw	$8,$2                   	# [17] 
+	.loc	1	67	0
+	stw	$0,128($sp)               	# [18] anon45
+	ldw	$1,96($sp)                	# [18] anon44
+	.loc	1	97	0
+	sll	$19,4,$0                  	# [18] 
+	.loc	1	103	0
+	sra	$6,3,$6                   	# [18] 
+	.loc	1	97	0
+	ldw	$3,132($sp)               	# [19] anon45+4
+	s8addl	$7,$0,$0               	# [19] 
+	.loc	1	79	0
+	ldi	$7,96($sp)                	# [19] anon44
+	.loc	1	103	0
+	s8addl	$6,$31,$6              	# [19] 
+	.loc	1	67	0
+	sextw	$6,$4                   	# [20] 
+	.loc	1	97	0
+	ldi	$19,96($sp)               	# [20] anon44
+	sll	$2,44,$2                  	# [20] 
+	.loc	1	48	0
+	ldi	$gp,0+140($gp)            	!gpdisp!5	# [20] 0
+	.loc	1	67	0
+	srl	$1,24,$1                  	# [21] 
+	sll	$4,40,$4                  	# [21] 
+	sll	$1,24,$1                  	# [22] 
+	srl	$4,40,$4                  	# [22] 
+	.loc	1	79	0
+	stl	$7,424($sp)               	# [23] a
+	.loc	1	85	0
+	ldi	$7,96($sp)                	# [23] anon44
+	.loc	1	67	0
+	or	$4,$1,$4                   	# [23] 
+	.loc	1	97	0
+	srl	$3,20,$3                  	# [23] 
+	.loc	1	85	0
+	stl	$7,408($sp)               	# [24] a
+	.loc	1	97	0
+	s4subl	$21,$21,$7             	# [24] 
+	sll	$25,44,$1                 	# [24] 
+	sll	$3,20,$3                  	# [24] 
+	.loc	1	85	0
+	stl	$16,400($sp)              	# [25] reply
+	.loc	1	103	0
+	ldw	$16,484($sp)              	# [25] anon35
+	.loc	1	97	0
+	sll	$7,4,$7                   	# [25] 
+	srl	$1,44,$1                  	# [25] 
+	s8addl	$21,$7,$21             	# [26] 
+	or	$1,$3,$1                   	# [26] 
+	.loc	1	79	0
+	ldi	$3,128($sp)               	# [26] anon45
+	.loc	1	97	0
+	srl	$2,44,$2                  	# [26] 
+	.loc	1	103	0
+	mulw	$16,$16,$16              	# [28] 
+	.loc	1	67	0
+	stw	$4,96($sp)                	# [29] anon44
+	.loc	1	97	0
+	ldw	$7,100($sp)               	# [29] anon44+4
+	.loc	1	73	0
+	ldi	$4,128($sp)               	# [29] anon45
+	.loc	1	97	0
+	srl	$7,20,$7                  	# [32] 
+	.loc	1	73	0
+	stl	$4,392($sp)               	# [33] a
+	.loc	1	97	0
+	sll	$7,20,$7                  	# [33] 
+	.loc	1	79	0
+	stl	$3,376($sp)               	# [34] a
+	.loc	1	85	0
+	ldi	$3,128($sp)               	# [34] anon45
+	.loc	1	97	0
+	or	$2,$7,$2                   	# [34] 
+	.loc	1	85	0
+	stl	$3,360($sp)               	# [35] a
+	ldi	$3,68($sp)                	# [35] anon43
+	stl	$3,352($sp)               	# [36] reply
+	.loc	1	97	0
+	stw	$1,132($sp)               	# [37] anon45+4
+	.loc	1	73	0
+	ldi	$1,128($sp)               	# [37] anon45
+	stl	$1,344($sp)               	# [38] a
+	.loc	1	67	0
+	stl	$28,328($sp)              	# [39] a
+	.loc	1	97	0
+	stl	$27,312($sp)              	# [40] a
+	.loc	1	103	0
+	stl	$26,296($sp)              	# [41] a
+	.loc	1	67	0
+	stl	$22,280($sp)              	# [42] a
+	.loc	1	97	0
+	stl	$19,264($sp)              	# [43] a
+	.loc	1	73	0
+	stw	$18,336($sp)              	# [44] size
+	.loc	1	67	0
+	stw	$8,272($sp)               	# [45] bsize
+	.loc	1	103	0
+	stw	$6,288($sp)               	# [46] size
+	.loc	1	97	0
+	stw	$0,256($sp)               	# [47] bleng
+	.loc	1	67	0
+	stw	$23,320($sp)              	# [48] bsize
+	.loc	1	97	0
+	stw	$2,100($sp)               	# [49] anon44+4
+	stw	$21,304($sp)              	# [50] bleng
+	.loc	1	103	0
+	stw	$21,140($sp)              	# [51] anon45+12
+	stw	$0,108($sp)               	# [51] anon44+12
+	##ble	$16,.BB173_convforward_p_simd_rc 	# [51] 
+.BB6_convforward_p_simd_rc:
+	ldw	$18,500($sp)              	# [0] anon31
+	ldl	$27,1304($sp)             	# [0] _temp_gra_spill13
+	mov	$31,$8                    	# [0] 
+	mov	$31,$6                    	# [0] 
+	ldw	$22,488($sp)              	# [1] anon34
+	ldl	$7,1296($sp)              	# [1] _temp_gra_spill12
+	vldd	$19,96($sp)              	# [2] anon44
+	mulw	$27,$18,$27              	# [3] 
+	mulw	$7,$22,$7                	# [4] 
+	mulw	$22,$18,$18              	# [5] 
+	addw	$27,7,$0                 	# [10] 
+	selge	$27,$27,$0,$27          	# [11] 
+	addw	$7,7,$28                 	# [11] 
+	sra	$27,3,$27                 	# [12] 
+	selge	$7,$7,$28,$7            	# [12] 
+	s8addl	$18,$31,$18            	# [12] 
+	mulw	$22,$27,$22              	# [13] 
+	sra	$7,3,$7                   	# [13] 
+	addw	$7,$22,$7                	# [20] 
+	s8addl	$7,$31,$7              	# [21] 
+	.align	4
+.Lt_0_46338:
+#<loop> Loop body line 103, nesting depth: 1, estimated iterations: 1000
+	.loc	1	80	0
+#  76    dma_set_stepsize(&dma_get, No/8*7*sizeof(Type));
+#  77  
+#  78    //load weight
+#  79    for(i = 0; i < K*K; ++i){
+#  80      dma(dma_get, (long)(param->weight + (rid*Ni/8*No+cid*No/8)+i*No*Ni), (long)(local_weight+i*No/8*Ni/8));
+	ldw	$2,500($sp)               	# [0] anon31
+	addw	$6,7,$22                 	# [0] 
+	selge	$6,$6,$22,$22           	# [1] 
+	ldl	$1,1328($sp)              	# [1] param
+	ldw	$0,64($sp)                	# [1] anon42
+	sra	$22,3,$22                 	# [2] 
+	ldl	$3,456($sp)               	# [2] anon40
+	mulw	$2,$22,$2                	# [3] 
+	ldl	$1,8($1)                  	# [4] id:501
+	cmpeq	$0,1,$0                 	# [4] 
+	addl	$1,$7,$1                 	# [7] 
+	addw	$2,7,$4                  	# [10] 
+	selge	$2,$2,$4,$2             	# [11] 
+	sra	$2,3,$2                   	# [12] 
+	s8addl	$2,$3,$2               	# [13] 
+	dma      $19,$1,$2            	# [14] 
+	bne	$0,.Lt_0_46594            	# [14] 
+.BB112_convforward_p_simd_rc:
+.BB110_convforward_p_simd_rc:
+#<loop> Loop body line 80
+#<loop> unrolled 3 times
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB111_convforward_p_simd_rc 	# [4] 
+.BB113_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .BB112_convforward_p_simd_rc
+#<loop> unrolled 3 times
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB111_convforward_p_simd_rc 	# [4] 
+.Lt_0_47106:
+#<loop> Part of loop body line 65536, head labeled .BB112_convforward_p_simd_rc
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	beq	$0,.BB112_convforward_p_simd_rc 	# [4] 
+.Lt_0_46594:
+.BB111_convforward_p_simd_rc:
+#<loop> Part of loop body line 262144, head labeled .Lt_0_46338
+	.loc	1	81	0
+#  81      dma_wait(&replyget, 1); replyget = 0;
+	ldw	$22,488($sp)              	# [0] anon34
+	addw	$8,1,$8                  	# [0] 
+	addl	$18,$7,$7                	# [0] 
+	cmpeq	$8,$16,$0               	# [1] 
+	addw	$6,$22,$6                	# [3] 
+	stw	$31,64($sp)               	# [4] anon42
+	beq	$0,.Lt_0_46338            	# [4] 
+.BB11_convforward_p_simd_rc:
+	.loc	1	67	0
+	ldw	$16,472($sp)              	# [0] anon38
+	.loc	1	96	0
+#  92    //dma(dma_get, (long)(param->input + cid*B*Ni/8 + B/8*rid), (long)(local_input + input_load_index*input_offset));
+#  93    dma(dma_get, (long)(input_ptr), (long)(local_input + input_load_index*input_offset));
+#  94    dma_wait(&replyget, 1); replyget = 0;
+#  95    input_load_index = 1-input_load_index; 
+#  96    input_calc_index = 1-input_calc_index; 
+	ldw	$0,476($sp)               	# [0] anon37
+	.loc	1	97	0
+	sll	$25,44,$6                 	# [0] 
+	.loc	1	95	0
+	mov	1,$22                     	# [0] 
+	.loc	1	96	0
+	ldw	$8,484($sp)               	# [1] anon35
+	.loc	1	67	0
+	ldw	$7,96($sp)                	# [1] anon44
+	.loc	1	97	0
+	srl	$6,44,$6                  	# [1] 
+	.loc	1	67	0
+	mulw	$17,$16,$16              	# [3] 
+	.loc	1	96	0
+	mulw	$0,$8,$0                 	# [4] 
+	.loc	1	81	0
+	stl	$13,168($sp)              	# [5] reply
+	stw	$12,160($sp)              	# [5] count
+.Lt_0_66306:
+	.loc	1	91	0
+	ldw	$27,472($sp)              	# [0] anon38
+	ldl	$1,1296($sp)              	# [0] _temp_gra_spill12
+	.loc	1	67	0
+	addw	$16,7,$26                	# [0] 
+	srl	$7,24,$3                  	# [0] 
+	.loc	1	90	0
+	ldw	$25,500($sp)              	# [1] anon31
+	.loc	1	67	0
+	selge	$16,$16,$26,$26         	# [1] 
+	.loc	1	96	0
+	ldw	$8,488($sp)               	# [1] anon34
+	.loc	1	67	0
+	sll	$3,24,$3                  	# [1] 
+	sra	$26,3,$26                 	# [2] 
+	.loc	1	91	0
+	ldl	$2,1304($sp)              	# [2] _temp_gra_spill13
+	.loc	1	67	0
+	ldi	$9,96($sp)                	# [2] anon44
+	ldi	$15,96($sp)               	# [2] anon44
+	.loc	1	91	0
+	mulw	$1,$27,$1                	# [3] 
+	.loc	1	67	0
+	s8addl	$26,$31,$26            	# [3] 
+	.loc	1	97	0
+	ldi	$28,96($sp)               	# [3] anon44
+	.loc	1	93	0
+	ldi	$19,64($sp)               	# [3] anon42
+	.loc	1	90	0
+	mulw	$27,$25,$27              	# [4] 
+	.loc	1	91	0
+	mulw	$24,$2,$2                	# [5] 
+	.loc	1	96	0
+	mulw	$8,$0,$8                 	# [6] 
+	.loc	1	91	0
+	mulw	$25,$1,$25               	# [10] 
+	.loc	1	67	0
+	sextw	$26,$1                  	# [10] 
+	sll	$1,40,$1                  	# [11] 
+	srl	$1,40,$1                  	# [12] 
+	or	$1,$3,$1                   	# [13] 
+	.loc	1	96	0
+	addw	$8,7,$4                  	# [13] 
+	.loc	1	67	0
+	stw	$1,96($sp)                	# [14] anon44
+	.loc	1	97	0
+	ldw	$1,100($sp)               	# [14] anon44+4
+	.loc	1	96	0
+	selge	$8,$8,$4,$8             	# [14] 
+	.loc	1	90	0
+	addw	$27,255,$4               	# [14] 
+	selge	$27,$27,$4,$27          	# [15] 
+	.loc	1	96	0
+	sra	$8,3,$8                   	# [15] 
+	.loc	1	90	0
+	sra	$27,8,$27                 	# [16] 
+	.loc	1	97	0
+	srl	$1,20,$1                  	# [17] 
+	.loc	1	91	0
+	addw	$25,7,$3                 	# [17] 
+	.loc	1	97	0
+	sll	$1,20,$1                  	# [18] 
+	.loc	1	91	0
+	selge	$25,$25,$3,$25          	# [18] 
+	.loc	1	97	0
+	or	$6,$1,$1                   	# [19] 
+	.loc	1	91	0
+	sra	$25,3,$25                 	# [19] 
+	.loc	1	97	0
+	stw	$1,100($sp)               	# [20] anon44+4
+	.loc	1	91	0
+	ldl	$3,1328($sp)              	# [20] param
+	addl	$25,$2,$25               	# [20] 
+	.loc	1	93	0
+	ldw	$1,64($sp)                	# [21] anon42
+	.loc	1	91	0
+	ldl	$3,0($3)                  	# [23] id:504
+	.loc	1	103	0
+	stw	$21,108($sp)              	# [24] anon44+12
+	.loc	1	93	0
+	vldd	$2,96($sp)               	# [24] anon44
+	cmpeq	$1,1,$1                 	# [24] 
+	.loc	1	91	0
+	s8addl	$25,$3,$25             	# [26] 
+	.loc	1	93	0
+	ldl	$3,1256($sp)              	# [26] _temp_gra_spill7
+	dma      $2,$25,$3            	# [29] 
+	bne	$1,.Lt_0_47874            	# [29] 
+.BB116_convforward_p_simd_rc:
+.BB114_convforward_p_simd_rc:
+#<loop> Loop body line 93
+#<loop> unrolled 3 times
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB115_convforward_p_simd_rc 	# [4] 
+.BB117_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .BB116_convforward_p_simd_rc
+#<loop> unrolled 3 times
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB115_convforward_p_simd_rc 	# [4] 
+.Lt_0_48386:
+#<loop> Part of loop body line 65536, head labeled .BB116_convforward_p_simd_rc
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	beq	$0,.BB116_convforward_p_simd_rc 	# [4] 
+.Lt_0_47874:
+.BB115_convforward_p_simd_rc:
+	.loc	1	94	0
+	stw	$31,64($sp)               	# [0] anon42
+	.loc	1	96	0
+	mov	$31,$18                   	# [0] 
+	stl	$9,248($sp)               	# [1] a
+	###ble	$8,.Lt_0_48898            	# [1] 
+.BB15_convforward_p_simd_rc:
+	vfmov	$31,$11                 	# [0] 
+	mov	$31,$6                    	# [0] 
+	mov	$20,$0                    	# [0] 
+.BB118_convforward_p_simd_rc:
+	and	$8,3,$7                   	# [0] 
+	beq	$7,.BB121_convforward_p_simd_rc 	# [1] 
+.BB122_convforward_p_simd_rc:
+	subw	$7,1,$7                  	# [0] 
+	.loc	1	99	0
+#  97    
+#  98    for(i=0; i<K*Co*No/8;++i){
+#  99      local_output[i]=0.0;
+	vstd	$11,0($20)               	# [0] id:505
+	addw	$31,1,$6                 	# [0] 
+	ldi	$0,32($20)                	# [0] 
+	beq	$7,.BB121_convforward_p_simd_rc 	# [1] 
+.BB123_convforward_p_simd_rc:
+	subw	$7,1,$1                  	# [0] 
+	vstd	$11,32($20)              	# [0] id:505
+	mov	2,$6                      	# [0] 
+	ldi	$0,64($20)                	# [0] 
+	beq	$1,.BB121_convforward_p_simd_rc 	# [1] 
+.BB124_convforward_p_simd_rc:
+	vstd	$11,64($20)              	# [0] id:505
+	mov	3,$6                      	# [0] 
+	ldi	$0,96($20)                	# [0] 
+.BB121_convforward_p_simd_rc:
+	sra	$8,2,$16                  	# [0] 
+	beq	$16,.BB125_convforward_p_simd_rc 	# [1] 
+	.align	4
+.BB120_convforward_p_simd_rc:
+.BB126_convforward_p_simd_rc:
+#<loop> Loop body line 96, nesting depth: 1, estimated iterations: 250
+#<loop> unrolled 4 times
+	vstd	$11,0($0)                	# [0] id:505
+	addw	$6,4,$6                  	# [0] 
+	vstd	$11,32($0)               	# [1] id:505
+	cmpeq	$6,$8,$1                	# [1] 
+	vstd	$11,64($0)               	# [2] id:505
+	vstd	$11,96($0)               	# [3] id:505
+	ldi	$0,128($0)                	# [3] 
+	beq	$1,.BB120_convforward_p_simd_rc 	# [3] 
+.BB18_convforward_p_simd_rc:
+.BB119_convforward_p_simd_rc:
+.BB125_convforward_p_simd_rc:
+.BB127_convforward_p_simd_rc:
+	mov	$8,$6                     	# [0] 
+.Lt_0_66562:
+	.loc	1	102	0
+# 100    }
+# 101  
+# 102    for(cRi=0; cRi<Ri; cRi++){
+	ldw	$0,496($sp)               	# [0] anon32
+	mov	$31,$14                   	# [0] 
+	ble	$0,.Lt_0_50178            	# [3] 
+.BB21_convforward_p_simd_rc:
+	###ldl	$16,.bss($gp)             	!literal	# [0] .bss
+	stw	$6,176($sp)               	# [0] anon28
+	vfmov	$31,$11                 	# [0] 
+	mov	$31,$10                   	# [0] 
+	mov	4,$9                      	# [0] 
+	stw	$18,180($sp)              	# [1] anon26
+	stw	$22,184($sp)              	# [1] anon27
+	stw	$12,188($sp)              	# [2] count
+	stl	$19,192($sp)              	# [2] reply
+	stl	$25,200($sp)              	# [3] anon47
+	stw	$27,208($sp)              	# [3] anon46
+	stw	$21,212($sp)              	# [4] bleng
+	stl	$28,216($sp)              	# [4] a
+	stw	$23,224($sp)              	# [5] bsize
+	stl	$15,232($sp)              	# [5] a
+	stw	$26,240($sp)              	# [6] size
+	stw	$12,432($sp)              	# [6] op
+	stl	$20,448($sp)              	# [7] anon41
+	br	$31,.Lt_0_50690            	# [7] 
+	.align	4
+.BB92_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	.loc	1	103	0
+# 103      for(cCi=0; cCi<Ci; cCi++){
+	ldw	$14,520($sp)              	# [0] anon15
+	stw	$12,1176($sp)             	# [0] count
+	stl	$13,1168($sp)             	# [1] reply
+.Lt_0_50946:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	.loc	1	293	0
+# 289  
+# 290      }//cCi
+# 291      //DMA output (B, No, Co, Ro) 
+# 292      //local_output size is B/8*No/8*Co
+# 293      int outputRo = cRi - K + 1;
+	ldw	$0,484($sp)               	# [0] anon35
+	.loc	1	103	0
+	ldi	$1,-1($31)                	# [0] 
+	.loc	1	293	0
+	subw	$14,$0,$0                	# [3] 
+	addw	$0,1,$15                 	# [4] 
+	.loc	1	103	0
+	cmplt	$0,$1,$0                	# [4] 
+	.loc	1	293	0
+	stw	$15,1180($sp)             	# [5] anon74
+	.loc	1	103	0
+	bne	$0,.Lt_0_69378            	# [5] 
+.BB94_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	.loc	1	295	0
+# 294      if(outputRo >= 0){
+# 295        int loutputRo = outputRo%K;
+	ldw	$26,484($sp)              	# [0] anon35
+	remw	$15,$26,$26
+	stw	$26,1184($sp)             	# [5] anon75
+	ldw	$0,476($sp)               	# [5] anon37
+	##ble	$0,.BB172_convforward_p_simd_rc 	# [8] 
+.BB95_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	mulw	$26,$0,$19               	# [0] 
+	ldw	$2,472($sp)               	# [0] anon38
+	ldw	$24,488($sp)              	# [0] anon34
+	mov	$31,$8                    	# [0] 
+	mulw	$15,$0,$25               	# [1] 
+	ldw	$0,508($sp)               	# [1] anon24
+	ldw	$6,504($sp)               	# [1] anon25
+	mov	$31,$7                    	# [1] 
+	vldd	$21,128($sp)             	# [2] anon45
+	ldl	$20,448($sp)              	# [2] anon41
+	mulw	$2,$24,$18               	# [3] 
+	###addw	$2,7,$1                  	# [3] 
+	mulw	$0,$2,$0                 	# [4] 
+	###selge	$2,$2,$1,$1             	# [4] 
+	sra	$2,3,$1                   	# [5] 
+	mulw	$6,$1,$6                 	# [6] 
+	mulw	$19,$24,$19              	# [7] 
+	mulw	$25,$18,$25              	# [10] 
+	s8addl	$18,$31,$18            	# [10] 
+	mulw	$24,$0,$24               	# [11] 
+	###addw	$19,7,$28                	# [14] 
+	###selge	$19,$19,$28,$19         	# [15] 
+	sra	$19,3,$19                 	# [16] 
+	###addw	$24,7,$27                	# [18] 
+	###selge	$24,$24,$27,$24         	# [19] 
+	sra	$24,3,$24                 	# [20] 
+	addl	$24,$25,$24              	# [21] 
+	addl	$6,$24,$6                	# [22] 
+	s8addl	$6,$31,$6              	# [23] 
+	.align	4
+.Lt_0_63234:
+#<loop> Loop body line 295, nesting depth: 2, estimated iterations: 1000
+	.loc	1	297	0
+# 296        for(i = 0; i < Co; i++){
+# 297  	dma(dma_put, (long)(param->output + outputRo*Co*B*No + i*B*No + cid*B*No/8 + B/8*rid), (long)(local_output + loutputRo*Co*No/8 + i*No/8));
+	ldl	$1,1328($sp)              	# [0] param
+	###addw	$7,7,$2                  	# [0] 
+	###selge	$7,$7,$2,$2             	# [1] 
+	ldw	$0,68($sp)                	# [1] anon43
+	sra	$7,3,$2                   	# [2] 
+	ldl	$1,16($1)                 	# [3] id:604
+	addl	$2,$19,$2                	# [3] 
+	s8addl	$2,$31,$2              	# [4] 
+	cmpeq	$0,1,$0                 	# [4] 
+	s4addl	$2,$20,$2              	# [5] 
+	addl	$1,$6,$1                 	# [6] 
+	dma      $21,$1,$2            	# [7] 
+	bne	$0,.Lt_0_63490            	# [7] 
+.BB140_convforward_p_simd_rc:
+.BB138_convforward_p_simd_rc:
+#<loop> Loop body line 297
+#<loop> unrolled 3 times
+	ldw	$0,68($sp)                	# [0] anon43
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB139_convforward_p_simd_rc 	# [4] 
+.BB141_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .BB140_convforward_p_simd_rc
+#<loop> unrolled 3 times
+	ldw	$0,68($sp)                	# [0] anon43
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB139_convforward_p_simd_rc 	# [4] 
+.Lt_0_64002:
+#<loop> Part of loop body line 65536, head labeled .BB140_convforward_p_simd_rc
+	ldw	$0,68($sp)                	# [0] anon43
+	cmpeq	$0,1,$0                 	# [3] 
+	beq	$0,.BB140_convforward_p_simd_rc 	# [4] 
+.Lt_0_63490:
+.BB139_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_63234
+	.loc	1	298	0
+# 298  	dma_wait(&replyput, 1); replyput = 0;
+	ldw	$0,476($sp)               	# [0] anon37
+	ldw	$24,488($sp)              	# [0] anon34
+	addw	$8,1,$8                  	# [0] 
+	addl	$18,$6,$6                	# [0] 
+	cmpeq	$8,$0,$0                	# [3] 
+	addw	$7,$24,$7                	# [3] 
+	stw	$31,68($sp)               	# [4] anon43
+	beq	$0,.Lt_0_63234            	# [4] 
+.BB100_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	sra	$7,3,$7				# [*]
+	###ldw	$7,476($sp)               	# [0] anon37
+	###ldi	$0,68($sp)                	# [0] anon43
+	###mulw	$5,$7,$7                 	# [3] 
+	###stl	$0,1192($sp)              	# [4] reply
+	###stw	$12,1188($sp)             	# [4] count
+.Lt_0_66818:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	###ble	$7,.Lt_0_64770            	# [0] 
+.BB102_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	ldw	$23,476($sp)              	# [0] anon37
+	ldw	$19,488($sp)              	# [0] anon34
+	.loc	1	302	0
+# 299        }
+# 300        
+# 301        for(i=0; i<No/8*Co; i++){
+# 302          local_output[loutputRo*Co*No/8+i]=0.0;
+	mov	$7,$20                    	# [0] 
+	.loc	1	298	0
+	ldl	$1,448($sp)               	# [1] anon41
+	###mulw	$26,$23,$23              	# [3] 
+	###mulw	$19,$23,$19              	# [10] 
+	###addw	$19,7,$21                	# [17] 
+	###selge	$19,$19,$21,$19         	# [18] 
+	###sra	$19,3,$19                 	# [19] 
+	mulw	$26, $7, $19
+	s8addl	$19,$31,$0             	# [20] 
+	mov	$19,$6                    	# [20] 
+	addw	$7,$19,$8                	# [20] 
+	s4addl	$0,$1,$0               	# [21] 
+.BB142_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	and	$7,3,$18                  	# [0] 
+	beq	$18,.BB145_convforward_p_simd_rc 	# [1] 
+.BB146_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	subw	$18,1,$18                	# [0] 
+	.loc	1	302	0
+	vstd	$11,0($0)                	# [0] id:607
+	addw	$19,1,$6                 	# [0] 
+	ldi	$0,32($0)                 	# [0] 
+	beq	$18,.BB145_convforward_p_simd_rc 	# [1] 
+.BB147_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	subw	$18,1,$1                 	# [0] 
+	vstd	$11,0($0)                	# [0] id:607
+	addw	$19,2,$6                 	# [0] 
+	ldi	$0,32($0)                 	# [0] 
+	beq	$1,.BB145_convforward_p_simd_rc 	# [1] 
+.BB148_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	vstd	$11,0($0)                	# [0] id:607
+	addw	$19,3,$6                 	# [0] 
+	ldi	$0,32($0)                 	# [0] 
+.BB145_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	sra	$7,2,$19                  	# [0] 
+	beq	$19,.BB149_convforward_p_simd_rc 	# [1] 
+	.align	4
+.BB144_convforward_p_simd_rc:
+.BB150_convforward_p_simd_rc:
+#<loop> Loop body line 298, nesting depth: 2, estimated iterations: 250
+#<loop> unrolled 4 times
+	vstd	$11,0($0)                	# [0] id:607
+	addw	$6,4,$6                  	# [0] 
+	vstd	$11,32($0)               	# [1] id:607
+	cmpeq	$6,$8,$1                	# [1] 
+	vstd	$11,64($0)               	# [2] id:607
+	vstd	$11,96($0)               	# [3] id:607
+	ldi	$0,128($0)                	# [3] 
+	beq	$1,.BB144_convforward_p_simd_rc 	# [3] 
+.Lt_0_67074:
+.BB105_convforward_p_simd_rc:
+.BB143_convforward_p_simd_rc:
+.BB149_convforward_p_simd_rc:
+.BB151_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	stw	$20,176($sp)              	# [0] anon28
+.Lt_0_69378:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	.loc	1	102	0
+	ldw	$0,496($sp)               	# [0] anon32
+	addw	$14,1,$14                	# [0] 
+	cmplt	$14,$0,$0               	# [3] 
+	beq	$0,.Lt_0_50178            	# [4] 
+.Lt_0_50690:
+#<loop> Loop body line 102, nesting depth: 1, estimated iterations: 100
+	.loc	1	103	0
+	ldw	$0,492($sp)               	# [0] anon33
+	ble	$0,.Lt_0_50946            	# [3] 
+.BB23_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+	stw	$14,520($sp)              	# [0] anon15
+	stw	$31,516($sp)              	# [0] anon16
+	br	$31,.Lt_0_51458            	# [0] 
+	.align	4
+.BB89_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_51458
+	.loc	1	110	0
+	ldw	$0,64($sp)                	# [0] anon42
+	.loc	1	286	0
+	mov	1,$7                      	# [0] 
+	.loc	1	287	0
+	mov	1,$6                      	# [0] 
+	.loc	1	110	0
+	stl	$13,1168($sp)             	# [1] reply
+	stw	$12,1176($sp)             	# [1] count
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.Lt_0_60930            	# [4] 
+.BB136_convforward_p_simd_rc:
+.BB134_convforward_p_simd_rc:
+#<loop> Loop body line 110
+#<loop> unrolled 3 times
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB135_convforward_p_simd_rc 	# [4] 
+.BB137_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .BB136_convforward_p_simd_rc
+#<loop> unrolled 3 times
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	bne	$0,.BB135_convforward_p_simd_rc 	# [4] 
+.Lt_0_61442:
+#<loop> Part of loop body line 65536, head labeled .BB136_convforward_p_simd_rc
+	ldw	$0,64($sp)                	# [0] anon42
+	cmpeq	$0,1,$0                 	# [3] 
+	beq	$0,.BB136_convforward_p_simd_rc 	# [4] 
+.Lt_0_60930:
+.BB135_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_51458
+	.loc	1	286	0
+	ldw	$22,184($sp)              	# [0] anon27
+	.loc	1	103	0
+	ldw	$1,516($sp)               	# [0] anon16
+	.loc	1	285	0
+	stw	$31,64($sp)               	# [1] anon42
+	.loc	1	287	0
+	ldw	$2,180($sp)               	# [1] anon26
+	.loc	1	286	0
+	subw	$7,$22,$22               	# [3] 
+	.loc	1	103	0
+	addw	$1,1,$1                  	# [3] 
+	.loc	1	286	0
+	stw	$22,184($sp)              	# [4] anon27
+	.loc	1	103	0
+	ldw	$0,492($sp)               	# [4] anon33
+	.loc	1	287	0
+	subw	$6,$2,$2                 	# [4] 
+	.loc	1	103	0
+	cmplt	$1,$0,$0                	# [7] 
+	.loc	1	287	0
+	stw	$2,180($sp)               	# [8] anon26
+	.loc	1	103	0
+	stw	$1,516($sp)               	# [8] anon16
+	beq	$0,.BB92_convforward_p_simd_rc 	# [8] 
+.Lt_0_51458:
+#<loop> Loop body line 103, nesting depth: 2, estimated iterations: 100
+	.loc	1	107	0
+	ldw	$2,208($sp)               	# [0] anon46
+	.loc	1	106	0
+	ldw	$1,472($sp)               	# [0] anon38
+	.loc	1	110	0
+	mov	$31,$7                    	# [0] 
+	.loc	1	106	0
+	ldw	$6,500($sp)               	# [1] anon31
+	ldl	$4,200($sp)               	# [1] anon47
+	.loc	1	107	0
+	vldd	$0,96($sp)               	# [2] anon44
+	ldl	$3,464($sp)               	# [2] anon39
+	mulw	$2,$22,$2                	# [3] 
+	.loc	1	106	0
+	mulw	$1,$6,$1                 	# [4] 
+	.loc	1	107	0
+	s8addl	$2,$31,$2              	# [10] 
+	.loc	1	106	0
+	s8addl	$1,$4,$1               	# [11] 
+	.loc	1	107	0
+	s4addl	$2,$3,$2               	# [11] 
+	.loc	1	106	0
+	stl	$1,200($sp)               	# [12] anon47
+	.loc	1	107	0
+	dma      $0,$1,$2             	# [12] 
+	br	$31,.Lt_0_52226            	# [12] 
+	.align	4
+.BB87_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52226
+	.loc	1	111	0
+	ldw	$7,524($sp)               	# [0] anon19
+.Lt_0_52482:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52226
+	.loc	1	110	0
+	addw	$7,1,$7                  	# [0] 
+	cmple	$7,7,$0                 	# [1] 
+	beq	$0,.BB89_convforward_p_simd_rc 	# [2] 
+.Lt_0_52226:
+#<loop> Loop body line 110, nesting depth: 3, estimated iterations: 100
+	.loc	1	111	0
+	mov	$31,$6                    	# [0] 
+	ble	$17,.Lt_0_52482           	# [0] 
+.BB26_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52226
+	stw	$7,524($sp)               	# [0] anon19
+	br	$31,.Lt_0_52994            	# [0] 
+	.align	4
+.BB84_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	ldw	$0,528($sp)               	# [0] anon21
+	.loc	1	142	0
+	stw	$8,676($sp)               	# [0] anon17
+	stw	$17,672($sp)              	# [1] anon22
+.Lt_0_54274:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	111	0
+	ldw	$17,500($sp)              	# [0] anon31
+	addw	$0,4,$6                  	# [0] 
+	ldw	$7,524($sp)               	# [1] anon19
+	addw	$17,7,$18                	# [3] 
+	selge	$17,$17,$18,$17         	# [4] 
+	sra	$17,3,$17                 	# [5] 
+	cmple	$17,$6,$1               	# [6] 
+	bne	$1,.BB87_convforward_p_simd_rc 	# [7] 
+.Lt_0_52994:
+#<loop> Loop body line 111, nesting depth: 4, estimated iterations: 100
+	ldw	$0,508($sp)               	# [0] anon24
+	stw	$6,528($sp)               	# [0] anon21
+	cmpeq	$0,$7,$0                	# [3] 
+	beq	$0,.Lt_0_53250            	# [4] 
+.BB28_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	114	0
+	ldl	$2,464($sp)               	# [0] anon39
+	ldw	$1,180($sp)               	# [1] anon26
+	ldw	$3,208($sp)               	# [2] anon46
+	mulw	$1,$3,$1                 	# [5] 
+	addw	$6,$1,$1                 	# [12] 
+	s8addl	$1,$31,$1              	# [13] 
+	s4addl	$1,$2,$1               	# [14] 
+	vldr	$1,0($1)                 	# [15] id:545
+	vstd	$1,544($sp)              	# [19] anon48
+	###vstd	$1,0($16)                	# [19] id:546 anon51+0x0
+	.loc	1	120	0
+	bne	$0,.BB32_convforward_p_simd_rc 	# [19] 
+.Lt_0_53506:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	#nop
+	.loc	1	124	0
+	ldw	$6,524($sp)               	# [1] anon19
+	getr	$5                       	# [1] 
+.BB34_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	ldw	$0,508($sp)               	# [0] anon24
+	###vstd	$5,96($16)               	# [3] id:550 anon54+0x0
+	vstd	$5,576($sp)              	# [3] anon48+32
+	cmpeq	$6,$0,$0                	# [3] 
+	.loc	1	127	0
+	bne	$0,.BB36_convforward_p_simd_rc 	# [4] 
+.Lt_0_53762:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	#nop
+	.loc	1	131	0
+	ldw	$0,524($sp)               	# [1] anon19
+	getr	$5                       	# [1] 
+.BB38_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	ldw	$1,508($sp)               	# [0] anon24
+	cmpeq	$0,$1,$1                	# [3] 
+	###vstd	$5,160($16)              	# [3] id:553 anon56+0x0
+	vstd	$5,608($sp)              	# [4] anon48+64
+	.loc	1	134	0
+	bne	$1,.BB40_convforward_p_simd_rc 	# [4] 
+.Lt_0_54018:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	#nop
+	.loc	1	138	0
+	getr	$0                       	# [1] 
+.BB42_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	###vstd	$0,224($16)              	# [0] id:556 anon58+0x0
+	vstd	$0,640($sp)              	# [0] anon48+96
+	br	$31,.Lt_0_68098            	# [0] 
+.Lt_0_53250:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	#nop
+	.loc	1	117	0
+	ldw	$5,524($sp)               	# [1] anon19
+	getr	$6                       	# [1] 
+.BB30_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	ldw	$0,508($sp)               	# [0] anon24
+	###vstd	$6,32($16)               	# [3] id:547 anon52+0x0
+	vstd	$6,544($sp)              	# [3] anon48
+	cmpeq	$5,$0,$0                	# [3] 
+	.loc	1	120	0
+	beq	$0,.Lt_0_53506            	# [4] 
+.BB32_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	121	0
+	ldl	$2,464($sp)               	# [0] anon39
+	ldw	$1,528($sp)               	# [1] anon21
+	ldw	$3,180($sp)               	# [2] anon26
+	ldw	$4,208($sp)               	# [3] anon46
+	mulw	$3,$4,$3                 	# [6] 
+	addw	$1,$3,$1                 	# [13] 
+	addw	$1,1,$1                  	# [14] 
+	s8addl	$1,$31,$1              	# [15] 
+	s4addl	$1,$2,$1               	# [16] 
+	vldr	$1,0($1)                 	# [17] id:548
+	vstd	$1,576($sp)              	# [21] anon48+32
+	###vstd	$1,64($16)               	# [21] id:549 anon53+0x0
+	.loc	1	127	0
+	beq	$0,.Lt_0_53762            	# [21] 
+.BB36_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	128	0
+	ldl	$2,464($sp)               	# [0] anon39
+	ldw	$1,528($sp)               	# [1] anon21
+	ldw	$3,180($sp)               	# [2] anon26
+	ldw	$4,208($sp)               	# [3] anon46
+	mulw	$3,$4,$3                 	# [6] 
+	addw	$1,$3,$1                 	# [13] 
+	addw	$1,2,$1                  	# [14] 
+	s8addl	$1,$31,$1              	# [15] 
+	s4addl	$1,$2,$1               	# [16] 
+	vldr	$1,0($1)                 	# [17] id:551
+	vstd	$1,608($sp)              	# [21] anon48+64
+	###vstd	$1,128($16)              	# [21] id:552 anon55+0x0
+	.loc	1	134	0
+	beq	$0,.Lt_0_54018            	# [21] 
+.BB40_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	135	0
+	ldw	$2,180($sp)               	# [0] anon26
+	ldw	$3,208($sp)               	# [0] anon46
+	ldw	$0,528($sp)               	# [1] anon21
+	ldl	$1,464($sp)               	# [1] anon39
+	mulw	$2,$3,$2                 	# [3] 
+	addw	$0,$2,$0                 	# [10] 
+	addw	$0,3,$0                  	# [11] 
+	s8addl	$0,$31,$0              	# [12] 
+	s4addl	$0,$1,$0               	# [13] 
+	vldr	$0,0($0)                 	# [14] id:554
+	vstd	$0,640($sp)              	# [18] anon48+96
+	###vstd	$0,192($16)              	# [18] id:555 anon57+0x0
+.Lt_0_68098:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	142	0
+	ldw	$5,488($sp)               	# [0] anon34
+	mov	$31,$17                   	# [0] 
+	addw	$5,7,$6                  	# [3] 
+	selge	$5,$5,$6,$5             	# [4] 
+	sra	$5,3,$5                   	# [5] 
+	bgt	$5,.Lt_0_54786            	# [6] 
+.BB180_convforward_p_simd_rc:
+	br	$31,.Lt_0_70914            	# [0] 
+	.align	4
+.BB82_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_54786
+	.loc	1	143	0
+	ldw	$5,488($sp)               	# [0] anon34
+	.loc	1	142	0
+	addw	$17,4,$17                	# [0] 
+	.loc	1	143	0
+	addw	$5,7,$6                  	# [3] 
+	selge	$5,$5,$6,$5             	# [4] 
+	stw	$0,688($sp)               	# [4] anon18
+	sra	$5,3,$5                   	# [5] 
+.Lt_0_55042:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_54786
+	.loc	1	142	0
+	cmple	$5,$17,$0               	# [0] 
+	bne	$0,.BB84_convforward_p_simd_rc 	# [1] 
+.Lt_0_54786:
+#<loop> Loop body line 142, nesting depth: 5, estimated iterations: 100
+	.loc	1	143	0
+	ldw	$0,484($sp)               	# [0] anon35
+	mov	$31,$8                    	# [0] 
+	###ble	$0,.BB154_convforward_p_simd_rc 	# [3] 
+.BB46_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_54786
+	stw	$17,672($sp)              	# [0] anon22
+	br	$31,.Lt_0_55554            	# [0] 
+	.align	4
+.Lt_0_55810:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_55554
+	ldw	$1,484($sp)               	# [0] anon35
+	addw	$8,1,$8                  	# [0] 
+	cmplt	$8,$1,$1                	# [3] 
+	beq	$1,.BB82_convforward_p_simd_rc 	# [4] 
+.Lt_0_55554:
+#<loop> Loop body line 143, nesting depth: 6, estimated iterations: 100
+	.loc	1	144	0
+	ldw	$1,484($sp)               	# [0] anon35
+	mov	$31,$0                    	# [0] 
+	ble	$1,.Lt_0_55810            	# [3] 
+.BB48_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_55554
+	stw	$8,676($sp)               	# [0] anon17
+	br	$31,.Lt_0_56322            	# [0] 
+	.align	4
+.Lt_0_57346:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	#nop
+.BB72_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	249	0
+	getc	$1                       	# [0] 
+	.loc	1	255	0
+	vldd	$17,736($sp)             	# [0] anon63
+	ldi	$0,736($sp)               	# [0] anon63
+	.loc	1	260	0
+	ldi	$6,544($sp)               	# [0] anon48
+	.loc	1	270	0
+	vldd	$21,832($sp)             	# [1] anon63+96
+	.loc	1	265	0
+	vldd	$8,800($sp)              	# [1] anon63+64
+	.loc	1	260	0
+	ldi	$7,992($sp)               	# [1] anon49
+	vldd	$19,768($sp)             	# [2] anon63+32
+	.loc	1	249	0
+	###vstd	$1,480($16)              	# [4] id:592 anon72+0x0
+	vstd	$1,1088($sp)             	# [4] anon49+96
+.BB130_convforward_p_simd_rc:
+.BB128_convforward_p_simd_rc:
+.Lt_0_69122:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+#<loop> unrolled 4 times (fully)
+	.loc	1	255	0
+	vldd	$2,0($7)                 	# [0] id:593 anon49+0x0
+	vldd	$1,0($6)                 	# [0] id:594 anon48+0x0
+	vldd	$3,32($7)                	# [1] id:593 anon49+0x0
+	vldd	$25,64($7)               	# [1] id:593 anon49+0x0
+	vldd	$22,96($7)               	# [2] id:593 anon49+0x0
+	vldd	$23,96($6)               	# [2] id:594 anon48+0x0
+	.loc	1	265	0
+	vextf	$2,2,$20                	# [4] 
+	.loc	1	260	0
+	vextf	$2,1,$4                 	# [4] 
+	.loc	1	255	0
+	vextf	$2,0,$5                 	# [5] 
+	.loc	1	268	0
+	vextf	$2,3,$2                 	# [5] 
+	.loc	1	265	0
+	vshff	$20,$20,$31,$20         	# [6] 
+	.loc	1	260	0
+	vshff	$4,$4,$31,$4            	# [6] 
+	.loc	1	255	0
+	vshff	$5,$5,$31,$5            	# [7] 
+	.loc	1	270	0
+	vshff	$2,$2,$31,$2            	# [7] 
+	.loc	1	265	0
+	vmad	$20,$1,$8,$20            	# [8] 
+	.loc	1	260	0
+	vmad	$4,$1,$19,$4             	# [8] 
+	.loc	1	255	0
+	vmad	$5,$1,$17,$5             	# [9] 
+	.loc	1	270	0
+	vmad	$2,$1,$21,$2             	# [9] 
+	.loc	1	255	0
+	vldd	$1,32($6)                	# [9] id:594 anon48+0x0
+	vextf	$3,0,$18                	# [10] 
+	.loc	1	265	0
+	vextf	$25,2,$27               	# [10] 
+	.loc	1	255	0
+	vshff	$18,$18,$31,$18         	# [11] 
+	.loc	1	260	0
+	vextf	$25,1,$28               	# [11] 
+	.loc	1	265	0
+	vshff	$27,$27,$31,$27         	# [12] 
+	.loc	1	260	0
+	vshff	$28,$28,$31,$28         	# [12] 
+	.loc	1	255	0
+	vmad	$18,$1,$5,$18            	# [13] 
+	.loc	1	260	0
+	vextf	$3,1,$5                 	# [13] 
+	vshff	$5,$5,$31,$5            	# [14] 
+	vmad	$5,$1,$4,$5              	# [15] 
+	.loc	1	265	0
+	vextf	$3,2,$4                 	# [15] 
+	.loc	1	268	0
+	vextf	$3,3,$3                 	# [16] 
+	.loc	1	265	0
+	vshff	$4,$4,$31,$4            	# [16] 
+	.loc	1	270	0
+	vshff	$3,$3,$31,$3            	# [17] 
+	.loc	1	265	0
+	vmad	$4,$1,$20,$4             	# [17] 
+	.loc	1	270	0
+	vmad	$3,$1,$2,$3              	# [18] 
+	.loc	1	255	0
+	vldd	$2,64($6)                	# [18] id:594 anon48+0x0
+	vextf	$25,0,$1                	# [18] 
+	.loc	1	268	0
+	vextf	$25,3,$25               	# [19] 
+	.loc	1	255	0
+	vshff	$1,$1,$31,$1            	# [19] 
+	.loc	1	270	0
+	vshff	$25,$25,$31,$25         	# [20] 
+	.loc	1	260	0
+	vextf	$22,1,$20               	# [20] 
+	vshff	$20,$20,$31,$20         	# [21] 
+	vmad	$28,$2,$5,$28            	# [22] 
+	.loc	1	255	0
+	vmad	$1,$2,$18,$1             	# [22] 
+	.loc	1	265	0
+	vmad	$27,$2,$4,$27            	# [23] 
+	.loc	1	270	0
+	vmad	$25,$2,$3,$25            	# [23] 
+	.loc	1	265	0
+	vextf	$22,2,$5                	# [24] 
+	.loc	1	255	0
+	vextf	$22,0,$18               	# [24] 
+	.loc	1	268	0
+	vextf	$22,3,$22               	# [25] 
+	.loc	1	265	0
+	vshff	$5,$5,$31,$5            	# [25] 
+	.loc	1	268	0
+	vfmov	$22,$24                 	# [26] 
+	.loc	1	255	0
+	vshff	$18,$18,$31,$18         	# [26] 
+	.loc	1	270	0
+	vshff	$22,$22,$31,$22         	# [27] 
+	.loc	1	260	0
+	vmad	$20,$23,$28,$20          	# [27] 
+	.loc	1	265	0
+	vmad	$5,$23,$27,$5            	# [28] 
+	.loc	1	255	0
+	vmad	$18,$23,$1,$18           	# [28] 
+	.loc	1	270	0
+	vmad	$22,$23,$25,$22          	# [29] 
+.BB75_convforward_p_simd_rc:
+.BB129_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	255	0
+	ldw	$23,476($sp)              	# [0] anon37
+	ldw	$27,692($sp)              	# [0] anon61
+	.loc	1	270	0
+	###vstd	$24,1120($sp)            	# [1] anon73
+	.loc	1	260	0
+	vstd	$20,768($sp)             	# [1] anon63+32
+	.loc	1	265	0
+	vstd	$5,800($sp)              	# [2] anon63+64
+	.loc	1	270	0
+	vstd	$22,832($sp)             	# [2] anon63+96
+	.loc	1	255	0
+	mulw	$23,$27,$23              	# [3] 
+	ldw	$6,488($sp)               	# [3] anon34
+	ldw	$7,696($sp)               	# [3] anon62
+	ldw	$17,672($sp)              	# [4] anon22
+	ldl	$19,448($sp)              	# [4] anon41
+	mulw	$7,$6,$7                 	# [6] 
+	stw	$9,1152($sp)              	# [7] anon29
+	vstd	$18,736($sp)             	# [7] anon63
+	mulw	$6,$23,$6                	# [10] 
+	###addw	$7,7,$25                 	# [13] 
+	###selge	$7,$7,$25,$7            	# [14] 
+	sra	$7,3,$7                   	# [15] 
+	###addw	$6,7,$21                 	# [17] 
+	###selge	$6,$6,$21,$6            	# [18] 
+	sra	$6,3,$6                   	# [19] 
+	addw	$7,$6,$8                 	# [20] 
+	addw	$17,$8,$8                	# [21] 
+	s8addl	$8,$31,$8              	# [22] 
+	s4addl	$8,$19,$8              	# [23] 
+.BB133_convforward_p_simd_rc:
+.BB131_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+#<loop> unrolled 4 times (fully)
+	.loc	1	273	0
+	vldd	$19,0($8)
+	vldd	$21,32($8)
+	vldd	$3,64($8)
+	vldd	$1,96($8)
+	vaddd	$18,$19,$18
+	vaddd	$20,$21,$20
+	vaddd	$5,$3,$5
+	vaddd	$22,$1,$22
+	vstd	$18,0($8)
+	vstd	$20,32($8)
+	vstd	$5,64($8)
+	vstd	$22,96($8)
+
+	###vldd	$20,0($8)                	# [0] id:597
+	###vldd	$19,0($0)                	# [0] id:598 anon63+0x0
+	###vldd	$5,32($0)                	# [1] id:598 anon63+0x0
+	###vldd	$3,64($0)                	# [1] id:598 anon63+0x0
+	###vldd	$1,96($0)                	# [2] id:598 anon63+0x0
+	###vaddd	$19,$20,$19             	# [4] 
+	###vstd	$19,0($8)                	# [8] id:599
+	###vldd	$18,32($8)               	# [8] id:597
+	###vaddd	$5,$18,$5               	# [12] 
+	###vstd	$5,32($8)                	# [16] id:599
+	###vldd	$4,64($8)                	# [16] id:597
+	###vaddd	$3,$4,$3                	# [20] 
+	###vstd	$3,64($8)                	# [24] id:599
+	###vldd	$2,96($8)                	# [24] id:597
+	###vaddd	$1,$2,$1                	# [28] 
+	###vstd	$1,96($8)                	# [32] id:599
+.BB77_convforward_p_simd_rc:
+.BB132_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	ldw	$0,688($sp)               	# [0] anon18
+	ldw	$8,676($sp)               	# [0] anon17
+	stw	$7,1156($sp)              	# [1] _temp___save_expr5
+	stw	$6,1160($sp)              	# [1] _temp___save_expr4
+	stw	$9,176($sp)               	# [2] anon28
+	.align	4
+.Lt_0_72194:
+.L_0_44546:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	144	0
+	ldw	$1,484($sp)               	# [0] anon35
+	addw	$0,1,$0                  	# [0] 
+	cmplt	$0,$1,$1                	# [3] 
+	beq	$1,.Lt_0_55810            	# [4] 
+.Lt_0_56322:
+#<loop> Loop body line 144, nesting depth: 7, estimated iterations: 100
+	.loc	1	146	0
+	ldw	$5,520($sp)               	# [0] anon15
+	.loc	1	147	0
+	ldw	$6,516($sp)               	# [1] anon16
+	.loc	1	146	0
+	subw	$5,$8,$5                 	# [3] 
+	.loc	1	147	0
+	subw	$6,$0,$6                 	# [4] 
+	.loc	1	146	0
+	###stw	$5,680($sp)               	# [4] anon59
+	.loc	1	147	0
+	###stw	$6,684($sp)               	# [5] anon60
+	.loc	1	144	0
+	blt	$5,.Lt_0_72194            	# [5] 
+.BB50_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	ldw	$1,480($sp)               	# [0] anon36
+	cmple	$1,$5,$1                	# [3] 
+	bne	$1,.Lt_0_72194            	# [4] 
+.BB51_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	blt	$6,.Lt_0_72194            	# [0] 
+.BB52_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	ldw	$1,476($sp)               	# [0] anon37
+	cmple	$1,$6,$1                	# [3] 
+	bne	$1,.Lt_0_72194            	# [4] 
+.BB53_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	152	0
+	stw	$0,688($sp)               	# [0] anon18
+	ldw	$18,484($sp)              	# [0] anon35
+	remw	$5,$18,$4
+	.loc	1	216	0
+	mulw	$8,$18,$27               	# [5] 
+	ldw	$22,500($sp)              	# [5] anon31
+	.loc	1	154	0
+	###stl	$31,936($sp)              	# [5] _temp___vec_cst3+8
+	###stl	$31,904($sp)              	# [6] _temp___vec_cst2+8
+	###stl	$31,872($sp)              	# [6] _temp___vec_cst1+8
+	###stl	$31,712($sp)              	# [7] _temp___vec_cst0+8
+	###stl	$31,944($sp)              	# [7] _temp___vec_cst3+16
+	###stl	$31,912($sp)              	# [8] _temp___vec_cst2+16
+	###stl	$31,880($sp)              	# [8] _temp___vec_cst1+16
+	###stl	$31,720($sp)              	# [9] _temp___vec_cst0+16
+	###fstd	$10,928($sp)             	# [9] _temp___vec_cst3
+	###fstd	$10,896($sp)             	# [10] _temp___vec_cst2
+	###fstd	$10,864($sp)             	# [10] _temp___vec_cst1
+	###fstd	$10,704($sp)             	# [11] _temp___vec_cst0
+	###stl	$31,952($sp)              	# [11] _temp___vec_cst3+24
+	.loc	1	216	0
+	addw	$0,$27,$27               	# [12] 
+	.loc	1	154	0
+	###stl	$31,920($sp)              	# [12] _temp___vec_cst2+24
+	.loc	1	216	0
+	mulw	$22,$27,$22              	# [13] 
+	.loc	1	154	0
+	###stl	$31,888($sp)              	# [13] _temp___vec_cst1+24
+	###stl	$31,728($sp)              	# [13] _temp___vec_cst0+24
+	###vldd	$1,896($sp)              	# [14] _temp___vec_cst2
+	###vldd	$28,928($sp)             	# [14] _temp___vec_cst3
+	###vldd	$2,864($sp)              	# [15] _temp___vec_cst1
+	###vldd	$3,704($sp)              	# [15] _temp___vec_cst0
+	.loc	1	152	0
+	stw	$4,692($sp)               	# [16] anon61
+	.loc	1	153	0
+	stw	$6,696($sp)               	# [16] anon62
+	.loc	1	216	0
+	ldw	$20,528($sp)              	# [17] anon21
+	.loc	1	152	0
+	ldw	$25,504($sp)              	# [17] anon25
+	.loc	1	154	0
+	###vstd	$1,800($sp)              	# [18] anon63+64
+	###vstd	$28,832($sp)             	# [18] anon63+96
+	###vstd	$2,768($sp)              	# [19] anon63+32
+	###vstd	$3,736($sp)              	# [19] anon63
+	vstd	$11,800($sp)              	# [18] anon63+64
+	vstd	$11,832($sp)             	# [18] anon63+96
+	vstd	$11,768($sp)              	# [19] anon63+32
+	vstd	$11,736($sp)              	# [19] anon63
+	.loc	1	216	0
+	ldw	$18,488($sp)              	# [20] anon34
+	###addw	$22,7,$24                	# [20] 
+	###selge	$22,$22,$24,$22         	# [21] 
+	.loc	1	152	0
+	ldw	$1,524($sp)               	# [21] anon19
+	.loc	1	216	0
+	ldl	$19,456($sp)              	# [21] anon40
+	sra	$22,3,$22                 	# [22] 
+	mulw	$20,$18,$20              	# [23] 
+	mulw	$18,$22,$18              	# [24] 
+	.loc	1	152	0
+	cmpeq	$1,$25,$1               	# [24] 
+	.loc	1	216	0
+	###addw	$20,7,$23                	# [30] 
+	###selge	$20,$20,$23,$20         	# [31] 
+	###addw	$18,7,$21                	# [31] 
+	###selge	$18,$18,$21,$18         	# [32] 
+	sra	$20,3,$20                 	# [32] 
+	sra	$18,3,$18                 	# [33] 
+	addl	$17,$20,$20              	# [33] 
+	addl	$18,$20,$18              	# [34] 
+	s8addl	$18,$19,$18            	# [35] 
+	stl	$18,960($sp)              	# [36] anon64
+	.loc	1	152	0
+	beq	$1,.Lt_0_56578            	# [36] 
+.BB54_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	220	0
+	vldd	$17,0($18)               	# [0] id:577
+	vstd	$17,992($sp)             	# [4] anon49
+	#nop
+	###vfmov	$17,$6                  	# [6] 
+	.loc	1	221	0
+	###mov	8,$8                      	# [6] 
+.BB55_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	###vstd	$8,256($16)              	# [0] id:579 anon65+0x0
+	.loc	1	225	0
+	ldw	$5,524($sp)               	# [1] anon19
+	ldw	$0,504($sp)               	# [2] anon25
+	.loc	1	221	0
+	###putc	$6,$8                    	# [3] 
+	putc	$17,8                    	# [3] 
+	.loc	1	220	0
+	br	$31,.Lt_0_68354            	# [3] 
+.Lt_0_56578:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	#nop
+	.loc	1	225	0
+	ldw	$5,524($sp)               	# [1] anon19
+	.loc	1	223	0
+	getc	$6                       	# [1] 
+.BB57_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	225	0
+	ldw	$0,504($sp)               	# [0] anon25
+	.loc	1	223	0
+	###vstd	$6,288($16)              	# [0] id:580 anon66+0x0
+	vstd	$6,992($sp)              	# [1] anon49
+.Lt_0_68354:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	225	0
+	cmpeq	$5,$0,$1                	# [0] 
+	beq	$1,.Lt_0_56834            	# [1] 
+.BB59_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	228	0
+	ldw	$17,488($sp)              	# [0] anon34
+	###ldl	$18,960($sp)              	# [0] anon64
+	###addw	$17,31,$19               	# [3] 
+	###selge	$17,$17,$19,$17         	# [4] 
+	sra	$17,5,$17                 	# [5] 
+	s8addl	$17,$31,$17            	# [6] 
+	s4addl	$17,$18,$17            	# [7] 
+	vldd	$17,0($17)               	# [8] id:581
+	vstd	$17,1024($sp)            	# [12] anon49+32
+	#nop
+	###vfmov	$17,$6                  	# [14] 
+	.loc	1	229	0
+	###mov	8,$8                      	# [14] 
+.BB60_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	###vstd	$8,320($16)              	# [0] id:583 anon67+0x0
+	.loc	1	234	0
+	ldw	$0,524($sp)               	# [1] anon19
+	ldw	$5,504($sp)               	# [2] anon25
+	.loc	1	229	0
+	###putc	$6,$8                    	# [3] 
+	putc	$17,8                    	# [3] 
+	.loc	1	228	0
+	br	$31,.Lt_0_68610            	# [3] 
+.Lt_0_56834:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	#nop
+	.loc	1	234	0
+	ldw	$0,524($sp)               	# [1] anon19
+	.loc	1	231	0
+	getc	$6                       	# [1] 
+.BB62_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	234	0
+	ldw	$5,504($sp)               	# [0] anon25
+	.loc	1	231	0
+	###vstd	$6,352($16)              	# [0] id:584 anon68+0x0
+	vstd	$6,1024($sp)             	# [1] anon49+32
+.Lt_0_68610:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	234	0
+	cmpeq	$0,$5,$1                	# [0] 
+	beq	$1,.Lt_0_57090            	# [1] 
+.BB64_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	237	0
+	ldw	$17,488($sp)              	# [0] anon34
+	###ldl	$18,960($sp)              	# [0] anon64
+	###addw	$17,15,$19               	# [3] 
+	###selge	$17,$17,$19,$17         	# [4] 
+	sra	$17,4,$17                 	# [5] 
+	s8addl	$17,$31,$17            	# [6] 
+	s4addl	$17,$18,$17            	# [7] 
+	vldd	$17,0($17)               	# [8] id:585
+	vstd	$17,1056($sp)            	# [12] anon49+64
+	#nop
+	###vfmov	$17,$6                  	# [14] 
+	.loc	1	238	0
+	###mov	8,$8                      	# [14] 
+.BB65_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	###vstd	$8,384($16)              	# [0] id:587 anon69+0x0
+	.loc	1	243	0
+	ldw	$5,524($sp)               	# [1] anon19
+	ldw	$0,504($sp)               	# [2] anon25
+	.loc	1	238	0
+	###putc	$6,$8                    	# [3] 
+	putc	$17,8                    	# [3] 
+	.loc	1	237	0
+	br	$31,.Lt_0_68866            	# [3] 
+.Lt_0_57090:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	#nop
+	.loc	1	243	0
+	ldw	$5,524($sp)               	# [1] anon19
+	.loc	1	240	0
+	getc	$6                       	# [1] 
+.BB67_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	243	0
+	ldw	$0,504($sp)               	# [0] anon25
+	.loc	1	240	0
+	###vstd	$6,416($16)              	# [0] id:588 anon70+0x0
+	vstd	$6,1056($sp)             	# [1] anon49+64
+.Lt_0_68866:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	243	0
+	cmpeq	$5,$0,$1                	# [0] 
+	beq	$1,.Lt_0_57346            	# [1] 
+.BB69_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	246	0
+	ldw	$21,488($sp)              	# [0] anon34
+	ldl	$22,960($sp)              	# [0] anon64
+	s4subl	$21,$21,$21            	# [3] 
+	sextw	$21,$21                 	# [4] 
+	###addw	$21,31,$23               	# [5] 
+	###selge	$21,$21,$23,$21         	# [6] 
+	sra	$21,5,$21                 	# [7] 
+	s8addl	$21,$31,$21            	# [8] 
+	s4addl	$21,$22,$21            	# [9] 
+	vldd	$21,0($21)               	# [10] id:589
+	vstd	$21,1088($sp)            	# [14] anon49+96
+	#nop
+	vfmov	$21,$5                  	# [16] 
+	.loc	1	260	0
+	##$6=&temp_input
+	ldi	$6,544($sp)               	# [16] anon48
+	.loc	1	255	0
+	##$0=&temp_res
+	ldi	$0,736($sp)               	# [16] anon63
+	.loc	1	247	0
+	###mov	8,$20                     	# [16] 
+.BB70_convforward_p_simd_rc:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_56322
+	.loc	1	255	0
+	##$17=temp_res[0]
+	vldd	$17,736($sp)             	# [0] anon63
+	.loc	1	247	0
+	###vstd	$20,448($16)             	# [0] id:591 anon71+0x0
+	.loc	1	260	0
+	##$7=&temp_weight
+	ldi	$7,992($sp)               	# [0] anon49
+	.loc	1	270	0
+	##$21=temp_res[3]
+	vldd	$21,832($sp)             	# [1] anon63+96
+	.loc	1	265	0
+	##$8=temp_res[2]
+	vldd	$8,800($sp)              	# [2] anon63+64
+	.loc	1	260	0
+	##$19=temp_res[1]
+	vldd	$19,768($sp)             	# [3] anon63+32
+	.loc	1	247	0
+	###putc	$5,$20                   	# [3] 
+	putc	$5,8                   	# [3] 
+	.loc	1	246	0
+	br	$31,.Lt_0_69122            	# [3] 
+.Lt_0_70914:
+#<loop> Part of loop body line 65536, head labeled .Lt_0_52994
+	.loc	1	111	0
+	ldw	$0,528($sp)               	# [0] anon21
+	.loc	1	142	0
+	stw	$31,672($sp)              	# [0] anon22
+	br	$31,.Lt_0_54274            	# [1] 
+##.Lt_0_64770:
+###<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+##	.loc	1	302	0
+##	mov	$31,$20                   	# [0] 
+##	br	$31,.Lt_0_67074            	# [0] 
+.Lt_0_50178:
+	.loc	1	102	0
+	ldl	$26,32($sp)               	# [0] return_address
+	ldl	$9,1208($sp)              	# [0] _temp_gra_spill1
+	ldl	$10,1200($sp)             	# [1] _temp_gra_spill0
+	ldl	$11,1248($sp)             	# [1] _temp_gra_spill6
+	ldl	$12,1240($sp)             	# [2] _temp_gra_spill5
+	ldl	$13,1232($sp)             	# [2] _temp_gra_spill4
+	ldl	$14,1224($sp)             	# [3] _temp_gra_spill3
+	ldl	$15,1216($sp)             	# [3] _temp_gra_spill2
+	ldi	$sp,1344($sp)             	# [3] 
+	ret	$31,($26),1               	# [4] 
+###.Lt_0_48898:
+###	.loc	1	99	0
+###	mov	$31,$6                    	# [0] 
+###	br	$31,.Lt_0_66562            	# [0] 
+	.align	4
+##.BB154_convforward_p_simd_rc:
+###<loop> Part of loop body line 65536, head labeled .Lt_0_54786
+##	.loc	1	142	0
+##	addw	$17,4,$17                	# [0] 
+##	br	$31,.Lt_0_55042            	# [0] 
+##.BB172_convforward_p_simd_rc:
+###<loop> Part of loop body line 65536, head labeled .Lt_0_50690
+##	.loc	1	298	0
+##	ldw	$7,476($sp)               	# [0] anon37
+##	mulw	$5,$7,$7                 	# [3] 
+##	br	$31,.Lt_0_66818            	# [3] 
+##.BB173_convforward_p_simd_rc:
+##	.loc	1	67	0
+##	ldw	$16,472($sp)              	# [0] anon38
+##	.loc	1	96	0
+##	ldw	$0,476($sp)               	# [0] anon37
+##	.loc	1	97	0
+##	sll	$25,44,$6                 	# [0] 
+##	.loc	1	95	0
+##	mov	$12,$22                   	# [0] 
+##	.loc	1	96	0
+##	ldw	$8,484($sp)               	# [1] anon35
+##	.loc	1	67	0
+##	ldw	$7,96($sp)                	# [1] anon44
+##	.loc	1	97	0
+##	srl	$6,44,$6                  	# [1] 
+##	.loc	1	67	0
+##	mulw	$17,$16,$16              	# [3] 
+##	.loc	1	96	0
+##	mulw	$0,$8,$0                 	# [4] 
+##	br	$31,.Lt_0_66306            	# [4] 
+.L_CC_convforward_p_simd_rc:
+# PU cycle count: 0.000000
+	.end	convforward_p_simd_rc
+
+	.section .rodata
+	.org 0x0
+	.align	0
+	# offset 0
+	.ascii	"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"	# doublev4 0.00000
+	.org 0x20
+	.align	0
+	# offset 32
+	.ascii	"\x00\x00\x00\x00\x00\x00\x00\x00"	# double 0.00000
+	.weak	_tdata_local_start
+	.weak	_tdata_local_end
+	.weak	_tdata_private_start
+	.weak	_tdata_private_end
+	.weak	_tdata_local_fix_end
+	.section .tdata
+	.align	0
+	.section .tdata_local_fix
+	.align	5
+	.section .text1
+	.align	4
+	.section .bss
+	.align	5
+	.section .rodata
+	.align	5
+#	.gpvalue 0
+
+	.section .debug_info, "", "progbits"
+	.align	0
+	.byte	0x72, 0x00, 0x00, 0x00, 0x02, 0x00
+	.long	.debug_abbrev
+	.long	0x6f630108, 0x665f6572, 0x74636e75, 0x736e6f69
+	.long	0x6f00632e, 0x436e6570, 0x2e352043, 0x2d313234
+	.byte	0x73, 0x77, 0x2d, 0x34, 0x34, 0x39, 0x00, 0x01
+	.byte	0x00
+	.long	.debug_line
+	.long	0x631c0102, 0x66766e6f, 0x6177726f, 0x705f6472
+	.long	0x6d69735f, 0x63725f64, 0x04010100, 0x0ac01e92
+	.quad	.BB1_convforward_p_simd_rc
+	.quad	.L_CC_convforward_p_simd_rc
+	.byte	0x03, 0x01, 0x1c, 0x70, 0x61, 0x72, 0x61, 0x6d
+	.byte	0x00, 0x02, 0x91, 0x70, 0x00, 0x00, 0x00
+
+	.section .debug_frame, "", "progbits"
+	.align	0
+
+	.section .debug_aranges, "", "progbits"
+	.align	0
+	.byte	0x2c, 0x00, 0x00, 0x00, 0x02, 0x00
+	.long	.debug_info
+	.byte	0x08, 0x00, 0x00, 0x00, 0x00, 0x00
+	.quad	.BB1_convforward_p_simd_rc
+	.quad	.L_CC_convforward_p_simd_rc - .BB1_convforward_p_simd_rc
+	.long	0x00000000, 0x00000000, 0x00000000, 0x00000000
+
+	.section .debug_pubnames, "", "progbits"
+	.align	0
+	.byte	0x28, 0x00, 0x00, 0x00, 0x02, 0x00
+	.long	.debug_info
+	.long	0x00000076, 0x00000037, 0x766e6f63, 0x77726f66
+	.long	0x5f647261, 0x69735f70, 0x725f646d, 0x00000063
+	.byte	0x00, 0x00
+
+	.section .eh_frame, "a", "progbits"
+	.align	0
+
+.LEHCIE:
+	.long	.LEHCIE_end - .LEHCIE_begin
+.LEHCIE_begin:
+	.long 0x0
+	.byte	0x01, 0x00, 0x01, 0x78, 0x1a, 0x0c, 0x1e, 0x00
+	.align 3
+.LEHCIE_end:
+
+	.section .debug_abbrev, "", "progbits"
+	.align	0
+	.long	0x03011101, 0x13082508, 0x100b420b, 0x02000006
+	.long	0x0b3a012e, 0x08030b3b, 0x408b0c3f, 0x110a400c
+	.long	0x00011201, 0x00050300, 0x0b3b0b3a, 0x0a020803
+	.byte	0x00, 0x00, 0x00, 0x00
+	.section	.note.GNU-stack,"",@progbits
+	.ident	"#SWCC Version 5.421-sw-449 : core_functions.c compiled with : -O3 -msimd "
+
