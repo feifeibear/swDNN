@@ -18,9 +18,9 @@ void gemm(Type* input, Type* weight, Type* output, int M, int N, int K, int rid,
   int ccCore, cN, cM, cK;
   int i, j;
 
-	SIMDType tmp_weight[4];
+  SIMDType tmp_weight[4];
   SIMDType tmp_input[4];
-	SIMDType tmp_output[16];
+  SIMDType tmp_output[16];
 
   for(ccCore=0; ccCore<8; ++ccCore){
     for(cM = 0; cM < M; cM += 4){
@@ -78,8 +78,8 @@ void gemm(Type* input, Type* weight, Type* output, int M, int N, int K, int rid,
           for(j = 0; j < 4; ++j)
             simd_store(  tmp_output[i*4+j],(output_ptr+4*(j+i*M)) );
 
-			  weight_ptr += 4;
-			  output_ptr += 16*M;
+        weight_ptr += 4;
+        output_ptr += 16*M;
 		  }//cN
 	  }//cM
   }//ccCore
