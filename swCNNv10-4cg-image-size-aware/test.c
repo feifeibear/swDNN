@@ -86,9 +86,9 @@ void CaffeConv2(Type* input, Type* weight, Type* output){
 	        //GEMM
 	          for(cB = 0; cB<B; cB++)
 	            for(cNo=0; cNo<No; cNo++)
-                      for(cNi = 0; cNi<Ni; cNi++){
-                          *(output + outGetIdx(cB, cNo, cCo, cRo)) += 
-                            *(input + inGetIdx(cB, cNi, cCi, cRi)) * *(weight + weightGetIdx(cNi, cKc, cKr, cNo));
+                for(cNi = 0; cNi<Ni; cNi++){
+                  *(output + outGetIdx(cB, cNo, cCo, cRo)) += 
+                    *(input + inGetIdx(cB, cNi, cCi, cRi)) * *(weight + weightGetIdx(cNi, cKc, cKr, cNo));
 	              }
 	        }
 	    }//cCi
@@ -178,35 +178,36 @@ int main(int argc, char **argv)
 	        params[i]->_bCo = bCo;
 		}
 
-			DMA_banchmark(params[0]);
+		DMA_banchmark(params[0]);
 
-			//warm up
+		//warm up
 
-			gettimeofday(&t1, NULL);
-			//athread_spawn(convforward_p_simd_rc_c, param);
-			//athread_join();
-			for(i = 0 ; i < NUM_CG; ++i){
-				pthread_create(&pthread_handler[i], NULL, conv_forward_4cg, (void*)params[i]);
-			}
-			for(i = 0 ; i < NUM_CG; ++i){
-				pthread_join(pthread_handler[i], NULL);
-			}
-			gettimeofday(&t2, NULL);
-			printf("Finish conv_p_simd_rc on accelerator. Time: %0.9lfs FLOPS:%.5f GFLOPS\n\n\n", TIME(t1, t2), gflop*pthread_step/(TIME(t1, t2))); 
+		gettimeofday(&t1, NULL);
+		//athread_spawn(convforward_p_simd_rc_c, param);
+		//athread_join();
+		for(i = 0 ; i < NUM_CG; ++i){
+			pthread_create(&pthread_handler[i], NULL, conv_forward_4cg, (void*)params[i]);
+		}
+		for(i = 0 ; i < NUM_CG; ++i){
+			pthread_join(pthread_handler[i], NULL);
+		}
+		gettimeofday(&t2, NULL);
+		printf("Finish conv_p_simd_rc on accelerator. Time: %0.9lfs FLOPS:%.5f GFLOPS\n\n\n", 
+      TIME(t1, t2), gflop*pthread_step/(TIME(t1, t2))); 
 #define CHECK
 #ifdef CHECK 
-	        printf("Begin conv on cpu. \n");
-			gettimeofday(&t1, NULL);
+    printf("Begin conv on cpu. \n");
+		gettimeofday(&t1, NULL);
 
-			int j;
-			for(j = 0; j < Ro; j++)
-				for(i = 0; i < 8; ++i)
-					CaffeConv(input+j*Ci*Ni*32 + 4*Ci*Ni*i, weight, test_output+j*Co*No*32 + 4*Co*No*i);
+		int j;
+		for(j = 0; j < Ro; j++)
+			for(i = 0; i < 8; ++i)
+				CaffeConv(input+j*Ci*Ni*32 + 4*Ci*Ni*i, weight, test_output+j*Co*No*32 + 4*Co*No*i);
 
-			gettimeofday(&t2, NULL);
-			printf("Finish conv on cpu. Time: %0.9lfs FLOPS:%.5f GFLOPS\n", TIME(t1, t2), gflop/(TIME(t1, t2)));
-			printf("2 #### check GEMM Cversion VS Correct Cversion.\n");
-            check(output, test_output);
+		gettimeofday(&t2, NULL);
+		printf("Finish conv on cpu. Time: %0.9lfs FLOPS:%.5f GFLOPS\n", TIME(t1, t2), gflop/(TIME(t1, t2)));
+		printf("2 #### check GEMM Cversion VS Correct Cversion.\n");
+    check(output, test_output);
 #endif    
 	}
 
