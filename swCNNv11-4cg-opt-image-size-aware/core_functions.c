@@ -107,49 +107,44 @@ void convforward_p_simd_rc_c(ConvData* param)
 			local_output[i] = 0.0;
 
 	  int weight_offset = Ni*No;
-      for(cKr=0; cKr < K; ++cKr){
+    for(cKr=0; cKr < K; ++cKr){
 //DMA the RoStart+cKr line of input
 		//dma(dma_get_input, (long)(input_base + ((RoStart+cKr)*Ni*8*Ci+CoStart)*4), (long)(local_input));
 		//dma_wait(&replyget_input, 1); replyget_input = 0;
+      if(cKr != K-1){
+		  	dma(dma_get_input, (long)(input_base + ((RoStart+cKr+1)*Ni*8*Ci+CoStart)*4), (long)(local_input + input_load_index*local_input_size));
+		  }
+		  else{
+		  	if(CoStart+bCo < Co){
+		  		dma(dma_get_input, (long)(input_base + ((RoStart)*Ni*8*Ci+CoStart+bCo)*4), (long)(local_input + input_load_index*local_input_size));
+		  	}
+		  	else{
+		  		dma(dma_get_input, (long)(input_base + ((RoStart+1)*Ni*8*Ci)*4), (long)(local_input + input_load_index*local_input_size));
+		  	}
+		  }
 
-        if(cKr != K-1){
-			dma(dma_get_input, (long)(input_base + ((RoStart+cKr+1)*Ni*8*Ci+CoStart)*4), (long)(local_input + input_load_index*local_input_size));
-		}
-		else{
-			if(CoStart+bCo < Co){
-				dma(dma_get_input, (long)(input_base + ((RoStart)*Ni*8*Ci+CoStart+bCo)*4), (long)(local_input + input_load_index*local_input_size));
-			}
-			else{
-				dma(dma_get_input, (long)(input_base + ((RoStart+1)*Ni*8*Ci)*4), (long)(local_input + input_load_index*local_input_size));
-			}
-		}
-
-		for(cKc=0; cKc < K; ++cKc){
-			
-			if(cKr == K-1 && cKc == K-1 )
-				dma(dma_get_weight, (long)(weight_base), (long)(local_weight + weight_load_index*local_weight_size));
-			else
-				dma(dma_get_weight, (long)(weight_base + weight_offset), (long)(local_weight + weight_load_index*local_weight_size));
-				
-			weight_offset+=Ni*No;
-
-		    gemm(local_input+4*cKc + input_calc_index*local_input_size, 
-					local_weight + weight_calc_index*local_weight_size, 
-					local_output, 
-					bCo, 
-					bCi,
-					No/8, 
-					Ni/8, 
-					rid, 
-					cid);
-
-			dma_wait(&replyget_weight, 1); replyget_weight = 0;
-			weight_load_index = 1 - weight_load_index;
-			weight_calc_index = 1 - weight_calc_index;
-		}//cKc
-		dma_wait(&replyget_input, 1); replyget_input = 0;
-		input_load_index = 1 - input_load_index;
-		input_calc_index = 1 - input_calc_index;
+		    for(cKc=0; cKc < K; ++cKc){
+		    	if(cKr == K-1 && cKc == K-1 )
+		    		dma(dma_get_weight, (long)(weight_base), (long)(local_weight + weight_load_index*local_weight_size));
+		    	else
+		    		dma(dma_get_weight, (long)(weight_base + weight_offset), (long)(local_weight + weight_load_index*local_weight_size));
+		    	weight_offset+=Ni*No;
+		      gemm(local_input+4*cKc + input_calc_index*local_input_size, 
+		        local_weight + weight_calc_index*local_weight_size, 
+		        local_output, 
+		        bCo, 
+		        bCi,
+		        No/8, 
+		        Ni/8, 
+		        rid, 
+		        cid);
+		    	  dma_wait(&replyget_weight, 1); replyget_weight = 0;
+		    	  weight_load_index = 1 - weight_load_index;
+		    	  weight_calc_index = 1 - weight_calc_index;
+		      }//cKc
+		    dma_wait(&replyget_input, 1); replyget_input = 0;
+		    input_load_index = 1 - input_load_index;
+		    input_calc_index = 1 - input_calc_index;
       }//cKr
       dma(dma_put_output, (long)(output_base + (RoStart*Co*No*8+CoStart)*4), (long)(local_output));
       dma_wait(&replyput, 1); replyput = 0;
