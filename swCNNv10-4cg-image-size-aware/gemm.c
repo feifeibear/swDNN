@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: gemm.c
-	> Author: ma6174
-	> Mail: ma6174@163.com 
+	> Author: Jerry
+	> Mail: fang_jiarui@163.com
 	> Created Time: Mon 29 Aug 2016 01:04:42 PM CST
  ************************************************************************/
 
@@ -16,7 +16,7 @@
 //M*K K*N
 void gemm(Type* input, Type* weight, Type* output, int M, int N, int K, int rid, int cid){
   int ccCore, cN, cM, cK;
-	int i, j;
+  int i, j;
 
 	SIMDType tmp_weight[4];
   SIMDType tmp_input[4];
@@ -75,8 +75,8 @@ void gemm(Type* input, Type* weight, Type* output, int M, int N, int K, int rid,
 			    input_ptr  += 4*M;
 			  }//cK
 		    for(i = 0 ; i < 4; ++i)
-			   for(j = 0; j < 4; ++j)
-			     simd_store(  tmp_output[i*4+j],(output_ptr+4*(j+i*M)) );
+          for(j = 0; j < 4; ++j)
+            simd_store(  tmp_output[i*4+j],(output_ptr+4*(j+i*M)) );
 
 			  weight_ptr += 4;
 			  output_ptr += 16*M;
